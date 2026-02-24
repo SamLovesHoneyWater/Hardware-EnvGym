@@ -3,26 +3,27 @@
   "url": "https://github.com/uiuc-arc/probfuzz",
   "mvw": {
     "mvw_command": "sudo ./install.sh && ./probfuzz.py 1",
-    "build_command": "sudo ./install.sh (or fallback: pip install --user deps + antlr)",
+    "build_command": "install.sh if apt-get+sudo, else pip install --user deps + antlr generation",
     "run_command": "./probfuzz.py 1",
     "input_scale": "1 program per PPS (Stan, Edward, Pyro), config max_threads=1",
     "success_criteria": "exit code 0, output dir created with summary"
   },
   "environment": {
     "os": "Linux",
-    "methodology": "tutorial.md one-pass profiling; process-tree RSS peak (monitor_tree.sh), whole tree not single process; MVW actually run; multi-thread peaks captured by tree monitor."
+    "python": "python2 preferred for generated antlr code, then python3; script applies Queue-compat patch for Py3 and ensures numpy/antlr4 (pip install --user if missing).",
+    "methodology": "one-pass profiling; process-tree RSS peak (monitor_tree.sh), whole tree not single process; MVW actually run; multi-thread peaks captured by tree monitor."
   },
   "static_triage": {
     "requires_gpu": false,
     "likely_bottlenecks": ["RAM", "CPU", "Disk"]
   },
   "peaks_observed": {
-    "build_peak_ram_gb": 0.2114,
-    "run_peak_ram_gb": 0,
-    "peak_disk_gb": .0025,
-    "build_runtime_seconds": 8,
-    "run_runtime_seconds": 4,
-    "cpu_utilization_summary": "build: install/deps; run: multi-thread inference (Stan/Edward/Pyro)"
+    "build_peak_ram_gb": 0.0490,
+    "run_peak_ram_gb": 0.0244,
+    "peak_disk_gb": 0.0028,
+    "build_runtime_seconds": 4,
+    "run_runtime_seconds": 1,
+    "cpu_utilization_summary": "build: deps/antlr; run: Stan/Edward/Pyro inference"
   },
   "margins_used": "none",
   "min_hardware": {
@@ -36,6 +37,6 @@
       "min_disk_gb": 1,
       "min_vcpu": 2
     },
-    "summary": "2 vCPU / 2 GB RAM / 1 GB disk, no GPU. Raw process-tree peaks: build 0.2114 GB, run 0 GB, disk .0025 GB."
+    "summary": "2 vCPU / 2 GB RAM / 1 GB disk, no GPU. Raw process-tree peaks: build 0.0490 GB, run 0.0244 GB, disk 0.0028 GB."
   }
 }

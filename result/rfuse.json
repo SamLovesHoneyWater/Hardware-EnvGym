@@ -1,0 +1,34 @@
+{
+  "name": "rfuse",
+  "url": "https://github.com/snu-csl/rfuse",
+  "mvw": {
+    "mvw_command": "cd lib/librfuse && meson setup build -Dutils=false -Dtests=true && ninja -C build -j$(nproc) && cd build && python3 -m pytest -q ../test",
+    "build_command": "cd lib/librfuse && meson setup build -Dutils=false -Dtests=true && ninja -C build -j$(nproc)",
+    "run_command": "cd lib/librfuse/build && python3 -m pytest -q ../test",
+    "input_scale": "Full librfuse library+tests build (utils disabled due missing udev in this host) and full pytest test directory execution",
+    "success_criteria": "build exits 0; pytest exits 0 (pass/skip allowed); command truly executed with process-tree monitoring"
+  },
+  "environment": {
+    "os": "Linux",
+    "methodology": "tutorial.md one-pass profiling; process-tree RSS peak via monitor_tree.sh; build/run split; real execution (not static analysis)."
+  },
+  "static_triage": {
+    "requires_gpu": false,
+    "likely_bottlenecks": ["RAM", "CPU", "Disk"],
+    "notes": "Kernel driver install/mount workflow needs sudo/reboot in project README. Host misses udev dev package, so MVW uses librfuse build with -Dutils=false to avoid system-level install dependency."
+  },
+  "peaks_observed": {
+    "build_peak_ram_gb": 0.0414,
+    "run_peak_ram_gb": 0.0287,
+    "peak_disk_gb": 1.4269,
+    "build_runtime_seconds": 4,
+    "run_runtime_seconds": 1,
+    "cpu_utilization_summary": "build: parallel compilation with ninja; run: pytest executes librfuse test suite (many mount tests may skip based on host privilege/device capabilities)"
+  },
+  "margins_used": "none",
+  "min_hardware": {
+    "build_min_spec": {"min_ram_gb": 2, "min_disk_gb": 2, "min_vcpu": 2},
+    "run_min_spec": {"min_ram_gb": 2, "min_disk_gb": 2, "min_vcpu": 2},
+    "summary": "2 vCPU / 2 GB RAM / 2 GB disk, no GPU. Raw process-tree peaks: build 0.0414 GB, run 0.0287 GB, disk 1.4269 GB."
+  }
+}

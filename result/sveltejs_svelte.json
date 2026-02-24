@@ -1,0 +1,36 @@
+{
+  "name": "sveltejs_svelte",
+  "url": "https://github.com/sveltejs/svelte",
+  "mvw": {
+    "mvw_command": "pnpm install --frozen-lockfile && pnpm exec vitest run --exclude packages/svelte/tests/runtime-browser/test.ts",
+    "build_command": "pnpm install --frozen-lockfile",
+    "run_command": "pnpm exec vitest run --exclude packages/svelte/tests/runtime-browser/test.ts",
+    "input_scale": "Full repo workspace install and vitest suite excluding Playwright browser-launch file",
+    "success_criteria": "exit code 0, vitest reports passing suite"
+  },
+  "environment": {
+    "os": "Linux (CentOS 7)",
+    "node": "v20.20.0",
+    "pnpm": "10.13.1",
+    "methodology": "tutorial.md one-pass profiling; process-group/tree RSS sampled by monitor_tree.sh every 0.5s; MVW actually executed."
+  },
+  "static_triage": {
+    "requires_gpu": false,
+    "likely_bottlenecks": ["RAM", "CPU", "Disk"],
+    "notes": "TypeScript/JavaScript monorepo using pnpm and vitest; no explicit GPU requirement. Browser-launch test file is excluded because it requires preinstalled Playwright browser binaries."
+  },
+  "peaks_observed": {
+    "build_peak_ram_gb": 0.7781,
+    "run_peak_ram_gb": 3.5255,
+    "peak_disk_gb": 0.2754,
+    "build_runtime_seconds": 5.40,
+    "run_runtime_seconds": 91.69,
+    "cpu_utilization_summary": "build and test phases are CPU-intensive with multiple worker processes"
+  },
+  "margins_used": "none",
+  "min_hardware": {
+    "build_min_spec": { "min_ram_gb": 2, "min_disk_gb": 1, "min_vcpu": 2 },
+    "run_min_spec": { "min_ram_gb": 4, "min_disk_gb": 1, "min_vcpu": 2 },
+    "summary": "2 vCPU / 4 GB RAM / 1 GB disk, no GPU. Raw process-tree peaks: build 0.7781 GB, run 3.5255 GB, disk 0.2754 GB."
+  }
+}

@@ -1,0 +1,112 @@
+=== [1/5] Clone 仓库 ===
+Cloning into '/home/cc/Label/sharkdp_fd_measure'...
+=== [2/5] Build 阶段：cargo build --release ===
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded bitflags v2.10.0
+  Downloaded argmax v0.4.0
+  Downloaded faccess v0.2.4
+  Downloaded anstyle-query v1.1.4
+  Downloaded anstyle v1.0.13
+  Downloaded heck v0.5.0
+  Downloaded ctrlc v3.5.1
+  Downloaded colorchoice v1.0.4
+  Downloaded bitflags v1.3.2
+  Downloaded tikv-jemallocator v0.6.1
+  Downloaded clap_lex v0.7.6
+  Downloaded terminal_size v0.4.3
+  Downloaded quote v1.0.41
+  Downloaded lscolors v0.21.0
+  Downloaded unicode-ident v1.0.20
+  Downloaded clap v4.5.54
+  Downloaded proc-macro2 v1.0.101
+  Downloaded memchr v2.7.6
+  Downloaded jiff-static v0.2.18
+  Downloaded log v0.4.28
+  Downloaded ignore v0.4.25
+  Downloaded clap_builder v4.5.54
+  Downloaded clap_complete v4.5.62
+  Downloaded anyhow v1.0.100
+  Downloaded find-msvc-tools v0.1.4
+  Downloaded clap_derive v4.5.49
+  Downloaded cc v1.2.41
+  Downloaded normpath v1.5.0
+  Downloaded anstyle-parse v0.2.7
+  Downloaded syn v2.0.107
+  Downloaded nix v0.31.1
+  Downloaded regex-syntax v0.8.8
+  Downloaded nix v0.30.1
+  Downloaded bstr v1.12.0
+  Downloaded anstream v0.6.21
+  Downloaded jiff v0.2.18
+  Downloaded libc v0.2.180
+  Downloaded tikv-jemalloc-sys v0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7
+   Compiling libc v0.2.180
+   Compiling bitflags v2.10.0
+   Compiling cfg_aliases v0.2.1
+   Compiling memchr v2.7.6
+   Compiling proc-macro2 v1.0.101
+   Compiling crossbeam-utils v0.8.21
+   Compiling rustix v1.1.3
+   Compiling unicode-ident v1.0.20
+   Compiling quote v1.0.41
+   Compiling find-msvc-tools v0.1.4
+   Compiling cfg-if v1.0.4
+   Compiling shlex v1.3.0
+   Compiling utf8parse v0.2.2
+   Compiling linux-raw-sys v0.11.0
+   Compiling regex-syntax v0.8.8
+   Compiling anstyle v1.0.13
+   Compiling anstyle-query v1.1.4
+   Compiling colorchoice v1.0.4
+   Compiling is_terminal_polyfill v1.70.1
+   Compiling strsim v0.11.1
+   Compiling clap_lex v0.7.6
+   Compiling heck v0.5.0
+   Compiling same-file v1.0.6
+   Compiling log v0.4.28
+   Compiling anyhow v1.0.100
+   Compiling once_cell v1.21.3
+   Compiling bitflags v1.3.2
+   Compiling nu-ansi-term v0.50.3
+   Compiling normpath v1.5.0
+   Compiling jiff v0.2.18
+   Compiling nix v0.30.1
+   Compiling nix v0.31.1
+   Compiling etcetera v0.11.0
+   Compiling anstyle-parse v0.2.7
+   Compiling walkdir v2.5.0
+   Compiling cc v1.2.41
+   Compiling anstream v0.6.21
+   Compiling aho-corasick v1.1.4
+   Compiling bstr v1.12.0
+   Compiling crossbeam-epoch v0.9.18
+   Compiling crossbeam-channel v0.5.15
+   Compiling syn v2.0.107
+   Compiling crossbeam-deque v0.8.6
+   Compiling tikv-jemalloc-sys v0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7
+   Compiling terminal_size v0.4.3
+   Compiling clap_builder v4.5.54
+   Compiling lscolors v0.21.0
+   Compiling faccess v0.2.4
+   Compiling regex-automata v0.4.13
+   Compiling argmax v0.4.0
+   Compiling ctrlc v3.5.1
+   Compiling clap_derive v4.5.49
+   Compiling globset v0.4.18
+   Compiling regex v1.12.2
+   Compiling ignore v0.4.25
+   Compiling clap v4.5.54
+   Compiling clap_complete v4.5.62
+   Compiling tikv-jemallocator v0.6.1
+   Compiling fd-find v10.3.0 (/home/cc/Label/sharkdp_fd_measure)
+    Finished `release` profile [optimized] target(s) in 54.25s
+=== [3/5] Run 阶段：执行 fd 搜索（重复多次以稳定采样峰值） ===
+=== [4/5] 汇总峰值 ===
+=== [5/5] 输出 JSON ===
+测量完成：/home/cc/Label/result/sharkdp_fd.json
+BUILD_PEAK_GB=1.7863
+RUN_PEAK_GB=0.0072
+DISK_GB=0.2979
+BUILD_RUNTIME_S=54
+RUN_RUNTIME_S=1

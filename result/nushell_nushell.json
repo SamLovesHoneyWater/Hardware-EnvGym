@@ -1,0 +1,43 @@
+{
+  "name": "nushell_nushell",
+  "url": "https://github.com/nushell/nushell",
+  "mvw": {
+    "mvw_command": "cargo build --release --bin nu && for i in $(seq 1 50); do ./target/release/nu -c 'open mvw_input/sample.json | each {|x| \\$x.b | math sum } | math sum'; done",
+    "build_command": "cargo build --release --bin nu",
+    "run_command": "for i in $(seq 1 50); do ./target/release/nu -c 'open mvw_input/sample.json | each {|x| \\$x.b | math sum } | math sum'; done",
+    "input_scale": "local JSON file with 3 records, each containing a short integer array; repeated 50 invocations",
+    "success_criteria": "both commands exit code 0 and target/release/nu exists"
+  },
+  "environment": {
+    "os": "Linux",
+    "rust_toolchain": "rustc 1.91.1 (ed61e7d7e 2025-11-07)",
+    "methodology": "tutorial.md one-pass profiling; process-tree RSS peak (monitor_tree.sh), whole tree not single process; MVW actually run; multi-thread/multi-process peak included."
+  },
+  "static_triage": {
+    "requires_gpu": false,
+    "likely_bottlenecks": ["RAM", "CPU", "Disk"],
+    "notes": "Rust shell project; no GPU requirement; build can be CPU/RAM heavy due to Rust dependency compilation."
+  },
+  "peaks_observed": {
+    "build_peak_ram_gb": 9.0417,
+    "run_peak_ram_gb": 0.0072,
+    "peak_disk_gb": 1.5354,
+    "build_runtime_seconds": 116,
+    "run_runtime_seconds": 1,
+    "cpu_utilization_summary": "build high (cargo/rustc compile), run low-moderate (single-process CLI data pipeline)"
+  },
+  "margins_used": "none",
+  "min_hardware": {
+    "build_min_spec": {
+      "min_ram_gb": 16,
+      "min_disk_gb": 2,
+      "min_vcpu": 2
+    },
+    "run_min_spec": {
+      "min_ram_gb": 2,
+      "min_disk_gb": 2,
+      "min_vcpu": 1
+    },
+    "summary": "2 vCPU / 16 GB RAM / 2 GB disk, no GPU. Raw process-tree peaks: build 9.0417 GB, run 0.0072 GB, disk 1.5354 GB."
+  }
+}

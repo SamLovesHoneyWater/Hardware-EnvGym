@@ -1,0 +1,113 @@
+=== [1/4] clone repository ===
+Cloning into '/home/cc/Label/sveltejs_svelte_measure'...
+=== environment ===
+node: v20.20.0
+pnpm: 10.13.1
+=== [2/4] build phase: pnpm install --frozen-lockfile ===
+Scope: all 3 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +442
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 442, reused 442, downloaded 0, added 442, done
+
+devDependencies:
++ @changesets/cli 2.29.8
++ @eslint/js 10.0.1
++ @sveltejs/eslint-config 8.3.5
++ @svitejs/changesets-changelog-github-compact 1.1.0
++ @types/node 20.19.17
++ @types/picomatch 4.0.2
++ @vitest/coverage-v8 2.1.9
++ eslint 10.0.0
++ eslint-plugin-lube 0.5.1
++ eslint-plugin-svelte 3.15.0
++ jsdom 25.0.1
++ playwright 1.58.0
++ prettier 3.2.4
++ prettier-plugin-svelte 3.4.0
++ svelte 5.53.0 <- packages/svelte
++ typescript 5.5.4
++ typescript-eslint 8.55.0
++ v8-natives 1.2.5
++ vitest 2.1.9
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮│                                                                              ││   Ignored build scripts: esbuild.                                            ││   Run "pnpm approve-builds" to pick which dependencies should be allowed     ││   to run scripts.                                                            ││                                                                              │╰──────────────────────────────────────────────────────────────────────────────╯
+
+playgrounds/sandbox prepare$ node scripts/create-app-svelte.js
+playgrounds/sandbox prepare: Done
+Done in 4s
+build_peak_ram_gb=0.7781
+=== [3/4] run phase: pnpm exec vitest run --exclude packages/svelte/tests/runtime-browser/test.ts ===
+
+ RUN  v2.1.9 /home/cc/Label/sveltejs_svelte_measure
+
+ ✓ packages/svelte/src/internal/server/crypto.test.ts (5 tests) 24ms
+ ✓ packages/svelte/src/internal/shared/clone.test.ts (11 tests) 17ms
+ ✓ packages/svelte/src/internal/client/proxy.test.ts (8 tests) 16ms
+ ✓ packages/svelte/src/reactivity/set.test.ts (6 tests) 14ms
+ ✓ packages/svelte/src/reactivity/map.test.ts (8 tests) 17ms
+ ✓ packages/svelte/src/reactivity/url-search-params.test.ts (8 tests) 17ms
+ ✓ packages/svelte/src/reactivity/url.test.ts (4 tests) 16ms
+ ✓ packages/svelte/src/reactivity/date.test.ts (17 tests) 55ms
+ ✓ packages/svelte/tests/store/test.ts (33 tests) 131ms
+ ✓ packages/svelte/src/internal/server/renderer.test.ts (20 tests) 50ms
+ ✓ packages/svelte/tests/css-parse.test.ts (16 tests) 15ms
+ ✓ packages/svelte/tests/print/test.ts (40 tests) 150ms
+ ✓ packages/svelte/tests/parser-modern/test.ts (24 tests) 189ms
+ ✓ packages/svelte/tests/parser-legacy/test.ts (83 tests | 1 skipped) 174ms
+ ✓ packages/svelte/tests/preprocess/test.ts (19 tests) 62ms
+ ✓ packages/svelte/tests/signals/test.ts (98 tests | 2 skipped) 1878ms
+   ✓ signals > schedules rerun when writing to signal before reading it (runes mode) 969ms
+   ✓ signals > schedules rerun when updating deeply nested value (runes mode) 834ms
+ ✓ packages/svelte/tests/migrate/test.ts (76 tests) 336ms
+ ✓ packages/svelte/tests/snapshot/test.ts (31 tests) 422ms
+ ✓ packages/svelte/tests/motion/test.ts (8 tests) 12ms
+ ✓ packages/svelte/tests/runtime-production/test.ts (12 tests) 431ms
+ ✓ packages/svelte/tests/validator/test.ts (330 tests | 4 skipped) 764ms
+ ✓ packages/svelte/tests/runtime-xhtml/test.ts (25 tests) 982ms
+ ✓ packages/svelte/tests/runtime-browser/test-ssr.ts (31 tests) 865ms
+ ✓ packages/svelte/tests/sourcemaps/test.ts (28 tests | 2 skipped) 454ms
+ ✓ packages/svelte/tests/compiler-errors/test.ts (145 tests) 266ms
+ ✓ packages/svelte/tests/server-side-rendering/test.ts (203 tests | 3 skipped) 1971ms
+ ✓ packages/svelte/tests/hydration/test.ts (79 tests) 2271ms
+ ✓ packages/svelte/tests/css/test.ts (179 tests) 3435ms
+stderr | packages/svelte/tests/runtime-runes/test.ts > async-if-after-await-in-script (hydrate)
+[svelte] hydration_mismatch
+Hydration failed because the initial UI does not match what was rendered on the server
+https://svelte.dev/e/hydration_mismatch
+
+ ✓ packages/svelte/tests/runtime-legacy/test.ts (3301 tests | 10 skipped) 38843ms
+   ✓ binding-input-text-contextual-reactive-prop (ssr) 762ms
+   ✓ binding-input-text-deconflicted (ssr) 374ms
+   ✓ binding-input-text-deep (ssr) 451ms
+   ✓ binding-input-text-deep-computed-dynamic (dom) 412ms
+   ✓ bitmask-overflow (dom) 319ms
+   ✓ event-handler-removal (ssr) 759ms
+   ✓ event-handler-sanitize (hydrate) 413ms
+   ✓ transition-js-if-block-in-each-block-bidi-3 (dom) 319ms
+ ✓ packages/svelte/tests/runtime-runes/test.ts (2396 tests | 38 skipped) 76542ms
+   ✓ 1000-reading-derived-effects (dom) 322ms
+   ✓ bind-this-raw (ssr) 647ms
+   ✓ bind-value-input-type-dynamic (ssr) 336ms
+   ✓ bindable-prop-and-export (ssr) 412ms
+   ✓ binding-property-non-reactive-ignored (dom) 405ms
+   ✓ effect-loop-3 (dom) 635ms
+   ✓ effect-loop-3 (hydrate) 581ms
+   ✓ effect-loop-infinite (dom) 1140ms
+   ✓ effect-loop-infinite (hydrate) 1163ms
+   ✓ error-boundary-20 (dom) 1196ms
+   ✓ error-boundary-20 (hydrate) 1184ms
+   ✓ legacy-recursive-reactive-block (dom) 419ms
+   ✓ mount-unmount-anchor (dom) 17247ms
+   ✓ mount-unmount-anchor (hydrate) 17046ms
+
+ Test Files  30 passed (30)
+      Tests  7184 passed | 60 skipped (7244)
+   Start at  06:56:26
+   Duration  88.38s (transform 28.35s, setup 0ms, collect 171.56s, tests 130.42s, environment 6.73s, prepare 13.10s)
+
+run_peak_ram_gb=3.5255
+=== [4/4] write result json ===
+done: /home/cc/Label/result/sveltejs_svelte.json
+=== cleaning resources ===

@@ -1,0 +1,2447 @@
+=== [1/5] Clone tokio ===
+Cloning into '/home/cc/Label/tokio-rs_tokio_measure'...
+=== [2/5] Build: cargo build -p tokio --features full --tests --jobs 1 ===
+    Updating crates.io index
+     Locking 213 packages to latest compatible versions
+      Adding criterion v0.5.1 (available: v0.8.2)
+      Adding hashbrown v0.15.5 (available: v0.16.1)
+      Adding mockall v0.13.1 (available: v0.14.0)
+      Adding nix v0.29.0 (available: v0.31.1)
+      Adding rand v0.9.2 (available: v0.10.0)
+      Adding rand_chacha v0.9.0 (available: v0.10.0)
+      Adding tracing-mock v0.1.0-beta.1 (available: v0.1.0-beta.3)
+ Downloading crates ...
+  Downloaded bit-set v0.8.0
+  Downloaded futures v0.3.32
+  Downloaded async-stream v0.3.6
+  Downloaded futures-core v0.3.32
+  Downloaded fragile v2.0.1
+  Downloaded bit-vec v0.8.0
+  Downloaded fastrand v2.3.0
+  Downloaded futures-sink v0.3.32
+  Downloaded downcast v0.11.0
+  Downloaded unarray v0.1.4
+  Downloaded predicates-tree v1.0.13
+  Downloaded termtree v0.5.1
+  Downloaded pin-utils v0.1.0
+  Downloaded wait-timeout v0.2.1
+  Downloaded futures-channel v0.3.32
+  Downloaded quick-error v1.2.3
+  Downloaded tokio-test v0.4.5
+  Downloaded tokio-stream v0.1.18
+  Downloaded pin-project v1.1.10
+  Downloaded parking_lot_core v0.9.12
+  Downloaded socket2 v0.6.2
+  Downloaded mockall_derive v0.13.1
+  Downloaded getrandom v0.4.1
+  Downloaded tokio-util v0.7.18
+  Downloaded futures-util v0.3.32
+  Downloaded proptest v1.10.0
+  Downloaded mio v1.1.1
+  Downloaded nix v0.29.0
+  Downloaded futures-lite v2.6.1
+  Downloaded futures-concurrency v7.7.1
+  Downloaded libm v0.2.16
+  Downloaded lock_api v0.4.14
+  Downloaded parking_lot v0.12.5
+  Downloaded mockall v0.13.1
+  Downloaded tempfile v3.25.0
+  Downloaded signal-hook-registry v1.4.8
+  Downloaded rusty-fork v0.3.1
+  Downloaded predicates v3.1.4
+  Downloaded futures-executor v0.3.32
+  Downloaded bytes v1.11.1
+  Downloaded predicates-core v1.0.10
+  Downloaded pin-project-internal v1.1.10
+  Downloaded parking v2.2.1
+  Downloaded futures-task v0.3.32
+  Downloaded futures-macro v0.3.32
+  Downloaded futures-test v0.3.32
+  Downloaded futures-io v0.3.32
+  Downloaded async-stream-impl v0.3.6
+   Compiling libc v0.2.182
+   Compiling proc-macro2 v1.0.106
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.44
+   Compiling cfg-if v1.0.4
+   Compiling syn v2.0.116
+   Compiling pin-project-lite v0.2.16
+   Compiling futures-core v0.3.32
+   Compiling autocfg v1.5.0
+   Compiling smallvec v1.15.1
+   Compiling getrandom v0.3.4
+   Compiling futures-io v0.3.32
+   Compiling parking_lot_core v0.9.12
+   Compiling zerocopy v0.8.39
+   Compiling futures-sink v0.3.32
+   Compiling scopeguard v1.2.0
+   Compiling lock_api v0.4.14
+   Compiling futures-channel v0.3.32
+   Compiling futures-macro v0.3.32
+   Compiling errno v0.3.14
+   Compiling rustix v1.1.3
+   Compiling memchr v2.8.0
+   Compiling slab v0.4.12
+   Compiling bitflags v2.11.0
+   Compiling getrandom v0.4.1
+   Compiling futures-task v0.3.32
+   Compiling fastrand v2.3.0
+   Compiling futures-util v0.3.32
+   Compiling signal-hook-registry v1.4.8
+   Compiling parking_lot v0.12.5
+   Compiling rand_core v0.9.5
+   Compiling tokio-macros v2.6.0 (/home/cc/Label/tokio-rs_tokio_measure/tokio-macros)
+   Compiling socket2 v0.6.2
+   Compiling mio v1.1.1
+   Compiling bytes v1.11.1
+   Compiling linux-raw-sys v0.11.0
+   Compiling tokio v1.49.0 (/home/cc/Label/tokio-rs_tokio_measure/tokio)
+   Compiling ppv-lite86 v0.2.21
+   Compiling memoffset v0.9.1
+   Compiling num-traits v0.2.19
+   Compiling pin-project-internal v1.1.10
+   Compiling mockall_derive v0.13.1
+   Compiling predicates-core v1.0.10
+   Compiling cfg_aliases v0.2.1
+   Compiling once_cell v1.21.3
+   Compiling tempfile v3.25.0
+   Compiling nix v0.29.0
+   Compiling pin-project v1.1.10
+   Compiling rand_chacha v0.9.0
+   Compiling futures-executor v0.3.32
+   Compiling wait-timeout v0.2.1
+   Compiling parking v2.2.1
+   Compiling quick-error v1.2.3
+   Compiling anstyle v1.0.13
+   Compiling bit-vec v0.8.0
+   Compiling fnv v1.0.7
+   Compiling termtree v0.5.1
+   Compiling predicates-tree v1.0.13
+   Compiling rusty-fork v0.3.1
+   Compiling bit-set v0.8.0
+   Compiling predicates v3.1.4
+   Compiling futures-lite v2.6.1
+   Compiling rand v0.9.2
+   Compiling tokio-stream v0.1.18
+   Compiling rand_xorshift v0.4.0
+   Compiling async-stream-impl v0.3.6
+   Compiling fragile v2.0.1
+   Compiling pin-utils v0.1.0
+   Compiling unarray v0.1.4
+   Compiling fixedbitset v0.5.7
+   Compiling downcast v0.11.0
+   Compiling regex-syntax v0.8.9
+   Compiling proptest v1.10.0
+   Compiling mockall v0.13.1
+   Compiling futures-concurrency v7.7.1
+   Compiling async-stream v0.3.6
+   Compiling tokio-test v0.4.5
+   Compiling futures-test v0.3.32
+   Compiling futures v0.3.32
+   Compiling tokio-util v0.7.18
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 4m 29s
+=== [3/5] Run: cargo test -p tokio --features full --tests --jobs 1 -- --test-threads=1 ===
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.15s
+     Running unittests src/lib.rs (target/debug/deps/tokio-398b888e1b2e6800)
+
+running 137 tests
+test fs::file::tests::busy_file_seek_error ... ok
+test fs::file::tests::flush_while_idle ... ok
+test fs::file::tests::incomplete_flush_followed_by_write ... ok
+test fs::file::tests::incomplete_partial_read_followed_by_write ... ok
+test fs::file::tests::incomplete_read_followed_by_flush ... ok
+test fs::file::tests::incomplete_read_followed_by_write ... ok
+test fs::file::tests::open_read ... ok
+test fs::file::tests::open_set_len_err ... ok
+test fs::file::tests::open_set_len_ok ... ok
+test fs::file::tests::open_write ... ok
+test fs::file::tests::partial_read_set_len_ok ... ok
+test fs::file::tests::read_err ... ok
+test fs::file::tests::read_err_then_read_success ... ok
+test fs::file::tests::read_twice_before_dispatch ... ok
+test fs::file::tests::read_with_bigger_buf ... ok
+test fs::file::tests::read_with_buffer_larger_than_max ... ok
+test fs::file::tests::read_with_smaller_buf ... ok
+test fs::file::tests::sync_all_err_ordered_after_write ... ok
+test fs::file::tests::sync_all_ordered_after_write ... ok
+test fs::file::tests::sync_data_err_ordered_after_write ... ok
+test fs::file::tests::sync_data_ordered_after_write ... ok
+test fs::file::tests::write_read_flush_err ... ok
+test fs::file::tests::write_read_write_err ... ok
+test fs::file::tests::write_seek_flush_err ... ok
+test fs::file::tests::write_seek_write_err ... ok
+test fs::file::tests::write_twice_before_dispatch ... ok
+test fs::file::tests::write_with_buffer_larger_than_max ... ok
+test fs::file::tests::write_write_err ... ok
+test future::maybe_done::miri_tests::maybe_done_miri ... ok
+test io::stdio_common::tests::test_pseudo_text ... ok
+test io::stdio_common::tests::test_splitter ... ok
+test io::util::buf_reader::tests::assert_unpin ... ok
+test io::util::buf_stream::tests::assert_unpin ... ok
+test io::util::buf_writer::tests::assert_unpin ... ok
+test io::util::chain::tests::assert_unpin ... ok
+test io::util::copy_buf::tests::assert_unpin ... ok
+test io::util::empty::tests::assert_unpin ... ok
+test io::util::lines::tests::assert_unpin ... ok
+test io::util::repeat::tests::assert_unpin ... ok
+test io::util::sink::tests::assert_unpin ... ok
+test io::util::split::tests::assert_unpin ... ok
+test io::util::take::tests::assert_unpin ... ok
+test process::imp::orphan::test::does_not_register_signal_if_queue_empty ... ok
+test process::imp::orphan::test::does_nothing_if_signal_could_not_be_registered ... ok
+test process::imp::orphan::test::drain_attempts_a_single_reap_of_all_queued_orphans ... ok
+test process::imp::orphan::test::no_reap_if_no_signal_received ... ok
+test process::imp::orphan::test::no_reap_if_signal_lock_held ... ok
+test process::imp::pidfd_reaper::test::test_pidfd_reaper_drop ... ok
+test process::imp::pidfd_reaper::test::test_pidfd_reaper_kill ... ok
+test process::imp::pidfd_reaper::test::test_pidfd_reaper_poll ... ok
+test process::imp::reap::test::drop_enqueues_orphan_if_wait_fails ... ok
+test process::imp::reap::test::drop_reaps_if_possible ... ok
+test process::imp::reap::test::kill ... ok
+test process::imp::reap::test::reaper ... ok
+test process::test::kills_on_drop_if_specified ... ok
+test process::test::no_kill_if_already_killed ... ok
+test process::test::no_kill_if_reaped ... ok
+test process::test::no_kill_on_drop_by_default ... ok
+test runtime::scheduler::multi_thread::idle::test_state ... ok
+test runtime::scheduler::multi_thread::queue::test_local_queue_capacity ... ok
+test runtime::task::core::header_lte_cache_line ... ok
+test runtime::task::list::tests::test_id_not_broken ... ok
+test runtime::task::spawn_location::spawn_location_is_zero_sized ... ok
+test runtime::tests::inject::pop_n_drains_on_drop ... ok
+test runtime::tests::inject::push_and_pop ... ok
+test runtime::tests::inject::push_batch_and_pop ... ok
+test runtime::tests::queue::fits_256_all_at_once ... ok
+test runtime::tests::queue::fits_256_all_in_chunks ... ok
+test runtime::tests::queue::fits_256_one_at_a_time ... ok
+test runtime::tests::queue::overflow ... ok
+test runtime::tests::queue::steal_batch ... ok
+test runtime::tests::queue::stress1 ... ok
+test runtime::tests::queue::stress2 ... ok
+test runtime::tests::task_combinations::test_combinations ... ok
+test runtime::time::tests::change_waker ... ok
+test runtime::time::tests::drop_timer ... ok
+test runtime::time::tests::instant_to_tick_max ... ok
+test runtime::time::tests::poll_process_levels ... ok
+test runtime::time::tests::poll_process_levels_targeted ... ok
+test runtime::time::tests::reset_future ... ok
+test runtime::time::tests::single_timer ... ok
+test runtime::time::wheel::level::test::test_slot_for ... ok
+test runtime::time::wheel::test::test_level_for ... ok
+test signal::registry::tests::broadcast_returns_if_at_least_one_event_fired ... ok
+test signal::registry::tests::record_invalid_event_does_nothing ... ok
+test signal::registry::tests::register_panics_on_invalid_input - should panic ... ok
+test signal::registry::tests::smoke ... ok
+test signal::reusable_box::test::test_different_futures ... ok
+test signal::reusable_box::test::test_different_sizes ... ok
+test signal::reusable_box::test::test_zero_sized ... ok
+test signal::unix::tests::from_c_int ... ok
+test signal::unix::tests::into_c_int ... ok
+test signal::unix::tests::signal_enable_error_on_forbidden_input ... ok
+test signal::unix::tests::signal_enable_error_on_invalid_input ... ok
+test sync::broadcast::tests::receiver_count_on_channel_constructor ... ok
+test sync::broadcast::tests::receiver_count_on_sender_constructor ... ok
+test sync::mpsc::block::assert_no_stack_overflow ... ok
+test sync::mutex::bounds ... ok
+test sync::rwlock::bounds ... ok
+test sync::semaphore::bounds ... ok
+test sync::tests::atomic_waker::atomic_waker_panic_safe ... ok
+test sync::tests::atomic_waker::basic_usage ... ok
+test sync::tests::atomic_waker::failed_wake_synchronizes ... ok
+test sync::tests::atomic_waker::wake_without_register ... ok
+test sync::tests::notify::notify_clones_waker_before_lock ... ok
+test sync::tests::notify::notify_simple ... ok
+test sync::tests::notify::notify_waiters_handles_panicking_waker ... ok
+test sync::tests::notify::watch_test ... ok
+test sync::tests::semaphore_batch::cancel_acquire_releases_permits ... ok
+test sync::tests::semaphore_batch::close_semaphore_notifies_permit1 ... ok
+test sync::tests::semaphore_batch::close_semaphore_notifies_permit2 ... ok
+test sync::tests::semaphore_batch::close_semaphore_prevents_acquire ... ok
+test sync::tests::semaphore_batch::forget_permits_basic ... ok
+test sync::tests::semaphore_batch::max_permits_doesnt_panic ... ok
+test sync::tests::semaphore_batch::poll_acquire_many_available ... ok
+test sync::tests::semaphore_batch::poll_acquire_many_unavailable ... ok
+test sync::tests::semaphore_batch::poll_acquire_one_available ... ok
+test sync::tests::semaphore_batch::poll_acquire_one_unavailable ... ok
+test sync::tests::semaphore_batch::poll_acquire_one_zero_permits ... ok
+test sync::tests::semaphore_batch::release_permits_at_drop ... ok
+test sync::tests::semaphore_batch::try_acquire_many_available ... ok
+test sync::tests::semaphore_batch::try_acquire_many_unavailable ... ok
+test sync::tests::semaphore_batch::try_acquire_one_available ... ok
+test sync::tests::semaphore_batch::try_acquire_one_unavailable ... ok
+test sync::tests::semaphore_batch::update_permits_many_times ... ok
+test sync::tests::semaphore_batch::validates_max_permits - should panic ... ok
+test task::coop::test::budgeting ... ok
+test task::local::tests::local_current_thread_scheduler ... ok
+test task::local::tests::wakes_to_local_queue ... ok
+test util::idle_notified_set::tests::join_set_test ... ok
+test util::linked_list::tests::const_new ... ok
+test util::linked_list::tests::push_and_drain ... ok
+test util::linked_list::tests::push_pop_push_pop ... ok
+test util::linked_list::tests::remove_by_address ... ok
+test util::memchr::tests::memchr_all ... ok
+test util::memchr::tests::memchr_empty ... ok
+test util::memchr::tests::memchr_test ... ok
+
+test result: ok. 137 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.10s
+
+     Running tests/_require_full.rs (target/debug/deps/_require_full-d0301a85996bc688)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/async_send_sync.rs (target/debug/deps/async_send_sync-bb6e36549778f2d2)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/buffered.rs (target/debug/deps/buffered-8224b128db08ebb6)
+
+running 1 test
+test echo_server ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/coop_budget.rs (target/debug/deps/coop_budget-78216a4d9fde68f5)
+
+running 2 tests
+test coop_budget_udp_send_recv ... ok
+test test_has_budget_remaining ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/dump.rs (target/debug/deps/dump-fa87941f146f3b1b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/duplex_stream.rs (target/debug/deps/duplex_stream-304b89f837e76974)
+
+running 2 tests
+test write_vectored ... ok
+test write_vectored_and_shutdown ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs.rs (target/debug/deps/fs-da2af51d0c97c380)
+
+running 2 tests
+test path_read_write ... ok
+test try_clone_should_preserve_max_buf_size ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_canonicalize_dir.rs (target/debug/deps/fs_canonicalize_dir-80423b4cc71e77f9)
+
+running 1 test
+test canonicalize_root_dir_unix ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_copy.rs (target/debug/deps/fs_copy-56fc03c083c7fd6d)
+
+running 2 tests
+test copy ... ok
+test copy_permissions ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_dir.rs (target/debug/deps/fs_dir-3b2472a2fed86980)
+
+running 7 tests
+test build_dir ... ok
+test build_dir_mode_read_only ... ok
+test create_all ... ok
+test create_dir ... ok
+test read_dir_entry_info ... ok
+test read_inherent ... ok
+test remove ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_file.rs (target/debug/deps/fs_file-cb6f08aee248fe7d)
+
+running 17 tests
+test basic_read ... ok
+test basic_write ... ok
+test basic_write_and_shutdown ... ok
+test coop ... ok
+test empty_read ... ok
+test file_debug_fmt ... ok
+test read_file_from_std ... ok
+test read_file_from_unix_fd ... ok
+test rewind_seek_position ... ok
+test set_max_buf_size_read ... ok
+test set_max_buf_size_write ... ok
+test unix_fd_is_valid ... ok
+test write_into_std ... ok
+test write_into_std_immediate ... ok
+test write_to_clone ... ok
+test write_vectored ... ok
+test write_vectored_and_shutdown ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/fs_link.rs (target/debug/deps/fs_link-317cc938be1baf3e)
+
+running 5 tests
+test test_hard_link ... ok
+test test_hard_link_error_destination_already_exists ... ok
+test test_hard_link_error_source_is_directory ... ok
+test test_hard_link_error_source_not_found ... ok
+test test_symlink ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_open_options.rs (target/debug/deps/fs_open_options-25bc8932059d3ada)
+
+running 8 tests
+test open_options_append ... ok
+test open_options_create ... ok
+test open_options_create_new ... ok
+test open_options_custom_flags_linux ... ok
+test open_options_mode ... ok
+test open_options_truncate ... ok
+test open_options_write ... ok
+test open_with_open_options_and_read ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_open_options_windows.rs (target/debug/deps/fs_open_options_windows-6ce677f05a1fcc3b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_remove_dir_all.rs (target/debug/deps/fs_remove_dir_all-e8e114eedd91511d)
+
+running 1 test
+test remove_dir_all ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_remove_file.rs (target/debug/deps/fs_remove_file-5d0e46eb187e2127)
+
+running 1 test
+test remove_file ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_rename.rs (target/debug/deps/fs_rename-b59185a8aa71faa0)
+
+running 1 test
+test rename_file ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_symlink_dir_windows.rs (target/debug/deps/fs_symlink_dir_windows-f5234fe3ebcbe226)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_symlink_file_windows.rs (target/debug/deps/fs_symlink_file_windows-16ef30329c608f17)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_try_exists.rs (target/debug/deps/fs_try_exists-7a03313f3e228248)
+
+running 1 test
+test try_exists ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_uring.rs (target/debug/deps/fs_uring-511f861305932e02)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_uring_read.rs (target/debug/deps/fs_uring_read-f694afc9db97144e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fs_write.rs (target/debug/deps/fs_write-c4812cca3a98d901)
+
+running 1 test
+test write ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_async_fd.rs (target/debug/deps/io_async_fd-84ffc2cedc194d10)
+
+running 24 tests
+test await_error_readiness_invalid_address ... ok
+test await_error_readiness_timestamping ... ok
+test clear_ready_matching_clears_ready ... ok
+test clear_ready_matching_clears_ready_mut ... ok
+test driver_shutdown_then_clear_readiness ... ok
+test driver_shutdown_wakes_currently_pending ... ok
+test driver_shutdown_wakes_currently_pending_polls ... ok
+test driver_shutdown_wakes_future_pending ... ok
+test driver_shutdown_wakes_pending_race ... ok
+test driver_shutdown_wakes_poll ... ok
+test driver_shutdown_wakes_poll_race ... ok
+test drop_closes ... ok
+test guard_try_io ... ok
+test initially_writable ... ok
+test multiple_waiters ... ok
+test poll_fns ... ok
+test priority_event_on_oob_data ... ok
+test reregister ... ok
+test reset_readable ... ok
+test reset_writable ... ok
+test try_io_readable ... ok
+test try_io_writable ... ok
+test try_new ... ok
+test try_with_interest ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.13s
+
+     Running tests/io_async_fd_memory_leak.rs (target/debug/deps/io_async_fd_memory_leak-158f31e5f2b78bd2)
+
+running 1 test
+test memory_leak_when_fd_closed_before_drop ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/io_async_read.rs (target/debug/deps/io_async_read-f2aca5f28a4140ee)
+
+running 1 test
+test assert_obj_safe ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_buf_reader.rs (target/debug/deps/io_buf_reader-f5b0b3d208a76889)
+
+running 8 tests
+test maybe_pending ... ok
+test maybe_pending_buf_read ... ok
+test maybe_pending_seek ... ok
+test test_buffered_reader ... ok
+test test_buffered_reader_seek ... ok
+test test_buffered_reader_seek_underflow ... ok
+test test_fill_buf_wrapper ... ok
+test test_short_reads ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_buf_writer.rs (target/debug/deps/io_buf_writer-bae3a32b00d9cc33)
+
+running 16 tests
+test buf_writer ... ok
+test buf_writer_inner_flushes ... ok
+test buf_writer_seek ... ok
+test maybe_pending_buf_writer ... ok
+test maybe_pending_buf_writer_inner_flushes ... ok
+test maybe_pending_buf_writer_seek ... ok
+test write_vectored_basic_on_non_vectored ... ok
+test write_vectored_basic_on_vectored ... ok
+test write_vectored_empty_on_non_vectored ... ok
+test write_vectored_empty_on_vectored ... ok
+test write_vectored_large_slice_on_non_vectored ... ok
+test write_vectored_large_slice_on_vectored ... ok
+test write_vectored_large_total_on_non_vectored ... ok
+test write_vectored_large_total_on_vectored ... ok
+test write_vectored_odd_on_non_vectored ... ok
+test write_vectored_odd_on_vectored ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_chain.rs (target/debug/deps/io_chain-d071c1ac29fd62f0)
+
+running 1 test
+test chain ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_copy.rs (target/debug/deps/io_copy-e82a718db2f71df5)
+
+running 3 tests
+test copy ... ok
+test copy_is_cooperative ... ok
+test proxy ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_copy_bidirectional.rs (target/debug/deps/io_copy_bidirectional-a168d122f314cc23)
+
+running 6 tests
+test blocking_one_side_does_not_block_other ... ok
+test copy_bidirectional_is_cooperative ... ok
+test immediate_exit_on_read_error ... ok
+test immediate_exit_on_write_error ... ok
+test test_basic_transfer ... ok
+test test_transfer_after_close ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/io_driver.rs (target/debug/deps/io_driver-e30b9f1d92be6d6c)
+
+running 2 tests
+test panics_when_io_disabled - should panic ... ok
+test test_drop_on_notify ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_driver_drop.rs (target/debug/deps/io_driver_drop-71ed0024411990e3)
+
+running 2 tests
+test drop_wakes ... ok
+test tcp_doesnt_block ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_fill_buf.rs (target/debug/deps/io_fill_buf-b21004d15ef8a33a)
+
+running 1 test
+test fill_buf_file ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_join.rs (target/debug/deps/io_join-6e8388a507078247)
+
+running 2 tests
+test is_send_and_sync ... ok
+test method_delegation ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_lines.rs (target/debug/deps/io_lines-b81d0c439902632f)
+
+running 1 test
+test lines_inherent ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_mem_stream.rs (target/debug/deps/io_mem_stream-babb028a0b407bf2)
+
+running 6 tests
+test across_tasks ... ok
+test disconnect ... ok
+test disconnect_reader ... ok
+test duplex_is_cooperative ... ok
+test max_write_size ... ok
+test ping_pong ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_panic.rs (target/debug/deps/io_panic-4d56f51906f7a1bc)
+
+running 9 tests
+test async_fd_new_panic_caller ... ok
+test async_fd_try_new_panic_caller ... ok
+test async_fd_try_with_interest_panic_caller ... ok
+test async_fd_with_interest_panic_caller ... ok
+test read_buf_advance_panic_caller ... ok
+test read_buf_initialize_unfilled_to_panic_caller ... ok
+test read_buf_put_slice_panic_caller ... ok
+test read_buf_set_filled_panic_caller ... ok
+test unsplit_panic_caller ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_poll_aio.rs (target/debug/deps/io_poll_aio-74d4d594433400d5)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_read.rs (target/debug/deps/io_read-10e2c702d165819c)
+
+running 2 tests
+test read ... ok
+test read_buf_bad_async_read - should panic ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_read_buf.rs (target/debug/deps/io_read_buf-dac3e6da678cced8)
+
+running 2 tests
+test issue_5588 ... ok
+test read_buf ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_read_exact.rs (target/debug/deps/io_read_exact-d1aec14d501e3888)
+
+running 1 test
+test read_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_read_line.rs (target/debug/deps/io_read_line-116c11c58ec9d9c8)
+
+running 5 tests
+test read_line ... ok
+test read_line_fail ... ok
+test read_line_fail_and_utf8_fail ... ok
+test read_line_invalid_utf8 ... ok
+test read_line_not_all_ready ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_read_to_end.rs (target/debug/deps/io_read_to_end-dcae2423990c84db)
+
+running 4 tests
+test read_to_end ... ok
+test read_to_end_doesnt_grow_with_capacity ... ok
+test read_to_end_grows_capacity_if_unfit ... ok
+test read_to_end_uninit ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.91s
+
+     Running tests/io_read_to_string.rs (target/debug/deps/io_read_to_string-c41eee0c0542b54f)
+
+running 4 tests
+test read_to_string ... ok
+test to_string_appends ... ok
+test to_string_does_not_truncate_on_io_error ... ok
+test to_string_does_not_truncate_on_utf8_error ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_read_until.rs (target/debug/deps/io_read_until-ff8187784e7d0813)
+
+running 3 tests
+test read_until ... ok
+test read_until_fail ... ok
+test read_until_not_all_ready ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_repeat.rs (target/debug/deps/io_repeat-d6214244b5c4438a)
+
+running 1 test
+test repeat_poll_read_is_cooperative ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_sink.rs (target/debug/deps/io_sink-67513dc1a29135de)
+
+running 3 tests
+test sink_poll_flush_is_cooperative ... ok
+test sink_poll_shutdown_is_cooperative ... ok
+test sink_poll_write_is_cooperative ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_split.rs (target/debug/deps/io_split-b728fd50953ae011)
+
+running 6 tests
+test is_send_and_sync ... ok
+test method_delegation ... ok
+test split_stream_id ... ok
+test unsplit_err1 - should panic ... ok
+test unsplit_err2 - should panic ... ok
+test unsplit_ok ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_take.rs (target/debug/deps/io_take-c9105d2a35f3e800)
+
+running 3 tests
+test bad_reader_fails - should panic ... ok
+test issue_4435 ... ok
+test take ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_util_empty.rs (target/debug/deps/io_util_empty-dd9feaa34ac02596)
+
+running 3 tests
+test empty_buf_reads_are_cooperative ... ok
+test empty_read_is_cooperative ... ok
+test empty_seek ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_write.rs (target/debug/deps/io_write-52baf64987a237d2)
+
+running 2 tests
+test write ... ok
+test write_cursor ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_write_all.rs (target/debug/deps/io_write_all-bf510f0130e69881)
+
+running 1 test
+test write_all ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_write_all_buf.rs (target/debug/deps/io_write_all_buf-891b7a30a2d194f6)
+
+running 3 tests
+test write_all_buf ... ok
+test write_all_buf_vectored ... ok
+test write_buf_err ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_write_buf.rs (target/debug/deps/io_write_buf-85b1d05fd631e1f3)
+
+running 2 tests
+test write_all ... ok
+test write_buf_vectored ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/io_write_int.rs (target/debug/deps/io_write_int-3165b47110fa38e2)
+
+running 1 test
+test write_int_should_err_if_write_count_0 ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/join_handle_panic.rs (target/debug/deps/join_handle_panic-72fb1b1d22ec18ad)
+
+running 1 test
+test test_panics_do_not_propagate_when_dropping_join_handle ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/macros_join.rs (target/debug/deps/macros_join-9d98d81cbb865904)
+
+running 13 tests
+test a_different_future_is_polled_first_every_time_poll_fn_is_polled ... ok
+test caller_names_const_count ... ok
+test empty_join ... ok
+test futures_are_polled_in_order_in_biased_mode ... ok
+test join_does_not_allow_tasks_to_starve ... ok
+test join_into_future ... ok
+test join_size ... ok
+test join_size_biased ... ok
+test sync_one_lit_expr_comma ... ok
+test sync_one_lit_expr_no_comma ... ok
+test sync_two_lit_expr_comma ... ok
+test sync_two_lit_expr_no_comma ... ok
+test two_await ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/macros_pin.rs (target/debug/deps/macros_pin-d32ba446c77f1aeb)
+
+running 1 test
+test multi_pin ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/macros_rename_test.rs (target/debug/deps/macros_rename_test-8d23eb2d065a0ff1)
+
+running 3 tests
+test crate_path_test ... ok
+test crate_rename_main ... ok
+test crate_rename_test ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/macros_select.rs (target/debug/deps/macros_select-62cb736a73b0f9ba)
+
+running 33 tests
+test biased_eventually_ready ... ok
+test biased_one_not_ready ... ok
+test disable_with_if ... ok
+test drop_in_fut ... ok
+test future_panics_after_poll ... ok
+test join_with_select ... ok
+test many_branches ... ok
+test move_uncompleted_futures ... ok
+test mut_on_left_hand_side ... ok
+test mut_ref_patterns ... ok
+test mutable_borrowing_future_with_same_borrow_in_block ... ok
+test mutable_borrowing_future_with_same_borrow_in_block_and_else ... ok
+test nested ... ok
+test nested_one ... ok
+test never_branch_no_warnings ... ok
+test no_branch_else_only ... ok
+test no_branch_else_only_biased ... ok
+test one_ready ... ok
+test pointer_64_tests::struct_size_1 ... ok
+test pointer_64_tests::struct_size_2 ... ok
+test pointer_64_tests::struct_size_3 ... ok
+test select_into_future ... ok
+test select_is_budget_aware ... ok
+test select_streams ... ok
+test sync_one_await ... ok
+test sync_one_ident ... ok
+test sync_one_lit_expr_block ... ok
+test sync_one_lit_expr_comma ... ok
+test sync_one_lit_expr_no_comma ... ok
+test sync_two ... ok
+test temporary_lifetime_extension ... ok
+test use_future_in_if_condition ... ok
+test use_future_in_if_condition_biased ... ok
+
+test result: ok. 33 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/macros_test.rs (target/debug/deps/macros_test-1c88b74abf1c7394)
+
+running 6 tests
+test issue_4175_test ... ok
+test issue_5243::foo ... ok
+test test_macro_can_be_used_via_use ... ok
+test test_macro_is_resilient_to_shadowing ... ok
+test trait_method ... ok
+test unused_braces_test ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/macros_try_join.rs (target/debug/deps/macros_try_join-f953b52eec30b1c8)
+
+running 13 tests
+test a_different_future_is_polled_first_every_time_poll_fn_is_polled ... ok
+test caller_names_const_count ... ok
+test empty_try_join ... ok
+test err_abort_early ... ok
+test futures_are_polled_in_order_in_biased_mode ... ok
+test sync_one_lit_expr_comma ... ok
+test sync_one_lit_expr_no_comma ... ok
+test sync_two_lit_expr_comma ... ok
+test sync_two_lit_expr_no_comma ... ok
+test try_join_does_not_allow_tasks_to_starve ... ok
+test try_join_size ... ok
+test try_join_size_biased ... ok
+test two_await ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/net_bind_resource.rs (target/debug/deps/net_bind_resource-f1e53263d935e371)
+
+running 1 test
+test no_runtime_panics_binding_net_tcp_listener - should panic ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/net_lookup_host.rs (target/debug/deps/net_lookup_host-5d19e041b41c314c)
+
+running 3 tests
+test lookup_socket_addr ... ok
+test lookup_str_socket_addr ... ok
+test resolve_dns ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/net_named_pipe.rs (target/debug/deps/net_named_pipe-4f9c56e6b8d69079)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/net_panic.rs (target/debug/deps/net_panic-a88e7d12e158c762)
+
+running 7 tests
+test tcp_listener_from_std_panic_caller ... ok
+test tcp_stream_from_std_panic_caller ... ok
+test udp_socket_from_std_panic_caller ... ok
+test unix_datagram_from_std_panic_caller ... ok
+test unix_listener_bind_panic_caller ... ok
+test unix_listener_from_std_panic_caller ... ok
+test unix_stream_from_std_panic_caller ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/net_quickack.rs (target/debug/deps/net_quickack-7596125271dd085b)
+
+running 1 test
+test socket_works_with_quickack ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/net_unix_pipe.rs (target/debug/deps/net_unix_pipe-69042cd5d082ff80)
+
+running 17 tests
+test anon_pipe_from_owned_fd ... ok
+test anon_pipe_into_blocking_fd ... ok
+test anon_pipe_into_nonblocking_fd ... ok
+test anon_pipe_simple_send ... ok
+test anon_pipe_spawn_echo ... ok
+test fifo_multiple_writes ... ok
+test fifo_resilient_reader ... ok
+test fifo_simple_send ... ok
+test fifo_simple_send_sender_first ... ok
+test from_file ... ok
+test from_file_detects_not_a_fifo ... ok
+test from_file_detects_wrong_access_mode ... ok
+test from_file_sets_nonblock ... ok
+test open_detects_not_a_fifo ... ok
+test try_read_buf ... ok
+test try_read_write ... ok
+test try_read_write_vectored ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/no_rt.rs (target/debug/deps/no_rt-4c14aed3b5748acb)
+
+running 3 tests
+test io_panics_when_no_tokio_context - should panic ... ok
+test panics_when_no_reactor - should panic ... ok
+test timeout_panics_when_no_tokio_context - should panic ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/process_arg0.rs (target/debug/deps/process_arg0-66ea89bd2aad4725)
+
+running 1 test
+test arg0 ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/process_change_of_runtime.rs (target/debug/deps/process_change_of_runtime-b94b43726644e492)
+
+running 2 tests
+test process_spawned_and_wait_in_different_runtime ... ok
+test process_spawned_outside_runtime - should panic ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/process_issue_2174.rs (target/debug/deps/process_issue_2174-bcfa2edf1df47fd8)
+
+running 1 test
+test issue_2174 ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.00s
+
+     Running tests/process_issue_42.rs (target/debug/deps/process_issue_42-bf03399221d0e865)
+
+running 1 test
+test issue_42 ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/process_issue_7144.rs (target/debug/deps/process_issue_7144-3843aebcdd70b11c)
+
+running 1 test
+test issue_7144 ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/process_kill_after_wait.rs (target/debug/deps/process_kill_after_wait-76a5b8ac7220794c)
+
+running 1 test
+test kill_after_wait ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/process_kill_on_drop.rs (target/debug/deps/process_kill_on_drop-474e6603fab421c3)
+
+running 1 test
+test kill_on_drop ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.00s
+
+     Running tests/process_raw_handle.rs (target/debug/deps/process_raw_handle-18748f284de3bc39)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/process_smoke.rs (target/debug/deps/process_smoke-c9363f378748590d)
+
+running 1 test
+test simple ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/rt_basic.rs (target/debug/deps/rt_basic-ed7a5df2d4a9a7be)
+
+running 9 tests
+test acquire_mutex_in_drop ... ok
+test before_park_yields ... ok
+test drop_tasks_in_context ... ok
+test no_extra_poll ... ok
+test spawn_remote ... ok
+test spawn_two ... ok
+test spawned_task_does_not_progress_without_block_on ... ok
+test timeout_panics_when_no_time_handle - should panic ... ok
+test wake_in_drop_after_panic - should panic ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/rt_common.rs (target/debug/deps/rt_common-24df9212d1061d29)
+
+running 139 tests
+test current_thread_scheduler::always_active_parker ... ok
+test current_thread_scheduler::block_on_async ... ok
+test current_thread_scheduler::block_on_socket ... ok
+test current_thread_scheduler::block_on_sync ... ok
+test current_thread_scheduler::client_server_block_on ... ok
+test current_thread_scheduler::complete_block_on_under_load ... ok
+test current_thread_scheduler::complete_task_under_load ... ok
+test current_thread_scheduler::coop ... ok
+test current_thread_scheduler::coop_unconstrained ... ok
+test current_thread_scheduler::coop_yield_defers_until_park ... ok
+test current_thread_scheduler::create_rt_in_block_on ... ok
+test current_thread_scheduler::eagerly_drops_futures_on_shutdown ... ok
+test current_thread_scheduler::enter_and_spawn ... ok
+test current_thread_scheduler::io_driver_called_when_under_load ... ok
+test current_thread_scheduler::io_notify_while_shutting_down ... ok
+test current_thread_scheduler::local_set_block_on_socket ... ok
+test current_thread_scheduler::local_set_client_server_block_on ... ok
+test current_thread_scheduler::nested_rt - should panic ... ok
+test current_thread_scheduler::outstanding_tasks_dropped ... ok
+test current_thread_scheduler::panic_in_block_on - should panic ... ok
+test current_thread_scheduler::panic_in_task ... ok
+test current_thread_scheduler::ping_pong_saturation ... ok
+test current_thread_scheduler::runtime_in_thread_local ... ok
+test current_thread_scheduler::shutdown_concurrent_spawn ... ok
+test current_thread_scheduler::shutdown_timeout ... ok
+test current_thread_scheduler::shutdown_timeout_0 ... ok
+test current_thread_scheduler::shutdown_wakeup_time ... ok
+test current_thread_scheduler::sleep_at_root ... ok
+test current_thread_scheduler::sleep_from_blocking ... ok
+test current_thread_scheduler::sleep_in_spawn ... ok
+test current_thread_scheduler::socket_from_blocking ... ok
+test current_thread_scheduler::spawn_await_chain ... ok
+test current_thread_scheduler::spawn_blocking_from_blocking ... ok
+test current_thread_scheduler::spawn_from_blocking ... ok
+test current_thread_scheduler::spawn_from_other_thread_idle ... ok
+test current_thread_scheduler::spawn_from_other_thread_under_load ... ok
+test current_thread_scheduler::spawn_many_from_block_on ... ok
+test current_thread_scheduler::spawn_many_from_task ... ok
+test current_thread_scheduler::spawn_one_bg ... ok
+test current_thread_scheduler::spawn_one_from_block_on_called_on_handle ... ok
+test current_thread_scheduler::spawn_one_join ... ok
+test current_thread_scheduler::spawn_two ... ok
+test current_thread_scheduler::wake_by_ref_from_thread_local ... ok
+test current_thread_scheduler::wake_by_val_from_thread_local ... ok
+test current_thread_scheduler::wake_while_rt_is_dropping ... ok
+test current_thread_scheduler::yield_defers_until_park ... ok
+test send_sync_bound ... ok
+test threaded_scheduler_1_thread::always_active_parker ... ok
+test threaded_scheduler_1_thread::block_on_async ... ok
+test threaded_scheduler_1_thread::block_on_socket ... ok
+test threaded_scheduler_1_thread::block_on_sync ... ok
+test threaded_scheduler_1_thread::client_server_block_on ... ok
+test threaded_scheduler_1_thread::complete_block_on_under_load ... ok
+test threaded_scheduler_1_thread::complete_task_under_load ... ok
+test threaded_scheduler_1_thread::coop ... ok
+test threaded_scheduler_1_thread::coop_unconstrained ... ok
+test threaded_scheduler_1_thread::coop_yield_defers_until_park ... ok
+test threaded_scheduler_1_thread::create_rt_in_block_on ... ok
+test threaded_scheduler_1_thread::eagerly_drops_futures_on_shutdown ... ok
+test threaded_scheduler_1_thread::enter_and_spawn ... ok
+test threaded_scheduler_1_thread::io_driver_called_when_under_load ... ok
+test threaded_scheduler_1_thread::io_notify_while_shutting_down ... ok
+test threaded_scheduler_1_thread::local_set_block_on_socket ... ok
+test threaded_scheduler_1_thread::local_set_client_server_block_on ... ok
+test threaded_scheduler_1_thread::nested_rt - should panic ... ok
+test threaded_scheduler_1_thread::outstanding_tasks_dropped ... ok
+test threaded_scheduler_1_thread::panic_in_block_on - should panic ... ok
+test threaded_scheduler_1_thread::panic_in_task ... ok
+test threaded_scheduler_1_thread::ping_pong_saturation ... ok
+test threaded_scheduler_1_thread::runtime_in_thread_local ... ok
+test threaded_scheduler_1_thread::shutdown_concurrent_spawn ... ok
+test threaded_scheduler_1_thread::shutdown_timeout ... ok
+test threaded_scheduler_1_thread::shutdown_timeout_0 ... ok
+test threaded_scheduler_1_thread::shutdown_wakeup_time ... ok
+test threaded_scheduler_1_thread::sleep_at_root ... ok
+test threaded_scheduler_1_thread::sleep_from_blocking ... ok
+test threaded_scheduler_1_thread::sleep_in_spawn ... ok
+test threaded_scheduler_1_thread::socket_from_blocking ... ok
+test threaded_scheduler_1_thread::spawn_await_chain ... ok
+test threaded_scheduler_1_thread::spawn_blocking_from_blocking ... ok
+test threaded_scheduler_1_thread::spawn_from_blocking ... ok
+test threaded_scheduler_1_thread::spawn_from_other_thread_idle ... ok
+test threaded_scheduler_1_thread::spawn_from_other_thread_under_load ... ok
+test threaded_scheduler_1_thread::spawn_many_from_block_on ... ok
+test threaded_scheduler_1_thread::spawn_many_from_task ... ok
+test threaded_scheduler_1_thread::spawn_one_bg ... ok
+test threaded_scheduler_1_thread::spawn_one_from_block_on_called_on_handle ... ok
+test threaded_scheduler_1_thread::spawn_one_join ... ok
+test threaded_scheduler_1_thread::spawn_two ... ok
+test threaded_scheduler_1_thread::wake_by_ref_from_thread_local ... ok
+test threaded_scheduler_1_thread::wake_by_val_from_thread_local ... ok
+test threaded_scheduler_1_thread::wake_while_rt_is_dropping ... ok
+test threaded_scheduler_1_thread::yield_defers_until_park ... ok
+test threaded_scheduler_4_threads::always_active_parker ... ok
+test threaded_scheduler_4_threads::block_on_async ... ok
+test threaded_scheduler_4_threads::block_on_socket ... ok
+test threaded_scheduler_4_threads::block_on_sync ... ok
+test threaded_scheduler_4_threads::client_server_block_on ... ok
+test threaded_scheduler_4_threads::complete_block_on_under_load ... ok
+test threaded_scheduler_4_threads::complete_task_under_load ... ok
+test threaded_scheduler_4_threads::coop ... ok
+test threaded_scheduler_4_threads::coop_unconstrained ... ok
+test threaded_scheduler_4_threads::coop_yield_defers_until_park ... ok
+test threaded_scheduler_4_threads::create_rt_in_block_on ... ok
+test threaded_scheduler_4_threads::eagerly_drops_futures_on_shutdown ... ok
+test threaded_scheduler_4_threads::enter_and_spawn ... ok
+test threaded_scheduler_4_threads::io_driver_called_when_under_load ... ok
+test threaded_scheduler_4_threads::io_notify_while_shutting_down ... ok
+test threaded_scheduler_4_threads::local_set_block_on_socket ... ok
+test threaded_scheduler_4_threads::local_set_client_server_block_on ... ok
+test threaded_scheduler_4_threads::nested_rt - should panic ... ok
+test threaded_scheduler_4_threads::outstanding_tasks_dropped ... ok
+test threaded_scheduler_4_threads::panic_in_block_on - should panic ... ok
+test threaded_scheduler_4_threads::panic_in_task ... ok
+test threaded_scheduler_4_threads::ping_pong_saturation ... ok
+test threaded_scheduler_4_threads::runtime_in_thread_local ... ok
+test threaded_scheduler_4_threads::shutdown_concurrent_spawn ... ok
+test threaded_scheduler_4_threads::shutdown_timeout ... ok
+test threaded_scheduler_4_threads::shutdown_timeout_0 ... ok
+test threaded_scheduler_4_threads::shutdown_wakeup_time ... ok
+test threaded_scheduler_4_threads::sleep_at_root ... ok
+test threaded_scheduler_4_threads::sleep_from_blocking ... ok
+test threaded_scheduler_4_threads::sleep_in_spawn ... ok
+test threaded_scheduler_4_threads::socket_from_blocking ... ok
+test threaded_scheduler_4_threads::spawn_await_chain ... ok
+test threaded_scheduler_4_threads::spawn_blocking_from_blocking ... ok
+test threaded_scheduler_4_threads::spawn_from_blocking ... ok
+test threaded_scheduler_4_threads::spawn_from_other_thread_idle ... ok
+test threaded_scheduler_4_threads::spawn_from_other_thread_under_load ... ok
+test threaded_scheduler_4_threads::spawn_many_from_block_on ... ok
+test threaded_scheduler_4_threads::spawn_many_from_task ... ok
+test threaded_scheduler_4_threads::spawn_one_bg ... ok
+test threaded_scheduler_4_threads::spawn_one_from_block_on_called_on_handle ... ok
+test threaded_scheduler_4_threads::spawn_one_join ... ok
+test threaded_scheduler_4_threads::spawn_two ... ok
+test threaded_scheduler_4_threads::wake_by_ref_from_thread_local ... ok
+test threaded_scheduler_4_threads::wake_by_val_from_thread_local ... ok
+test threaded_scheduler_4_threads::wake_while_rt_is_dropping ... ok
+test threaded_scheduler_4_threads::yield_defers_until_park ... ok
+
+test result: ok. 139 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.43s
+
+     Running tests/rt_common_before_park.rs (target/debug/deps/rt_common_before_park-0f82dc91d50a3a13)
+
+running 3 tests
+test before_park_spawns_task ... ok
+test before_park_wakes_block_on_task ... ok
+test wake_from_other_thread_block_on ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/rt_handle.rs (target/debug/deps/rt_handle-ee9ef1162abb6670)
+
+running 7 tests
+test basic_enter ... ok
+test drop_tasks_with_reference_cycle ... ok
+test interleave_enter_different_rt - should panic ... ok
+test interleave_enter_same_rt - should panic ... ok
+test interleave_then_enter ... ok
+test runtime_id_is_same ... ok
+test runtime_ids_different ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/rt_handle_block_on.rs (target/debug/deps/rt_handle_block_on-0b691f50a5f52993)
+
+running 63 tests
+test basic ... ok
+test bounded_mpsc_channel ... ok
+test current_thread_scheduler::basic_fs ... ok
+test current_thread_scheduler::basic_spawn_blocking ... ok
+test current_thread_scheduler::fs_shutdown_before_started ... ok
+test current_thread_scheduler::nesting - should panic ... ok
+test current_thread_scheduler::spawn_after_runtime_dropped ... ok
+test current_thread_scheduler::spawn_blocking_after_shutdown_fails ... ok
+test current_thread_scheduler::spawn_blocking_started_before_shutdown_continues ... ok
+test current_thread_scheduler::tcp_listener_bind ... ok
+test current_thread_scheduler::tcp_listener_connect_after_shutdown ... ignored
+test current_thread_scheduler::tcp_listener_connect_before_shutdown ... ignored
+test current_thread_scheduler::thread_park_ok ... ok
+test current_thread_scheduler::udp_socket_bind ... ok
+test current_thread_scheduler::udp_stream_bind_after_shutdown ... ignored
+test current_thread_scheduler::udp_stream_bind_before_shutdown ... ignored
+test current_thread_scheduler::unix_listener_bind_after_shutdown ... ignored
+test current_thread_scheduler::unix_listener_shutdown_after_accept ... ignored
+test current_thread_scheduler::unix_listener_shutdown_after_bind ... ignored
+test threaded_scheduler_1_thread::basic_fs ... ok
+test threaded_scheduler_1_thread::basic_spawn_blocking ... ok
+test threaded_scheduler_1_thread::fs_shutdown_before_started ... ok
+test threaded_scheduler_1_thread::nesting - should panic ... ok
+test threaded_scheduler_1_thread::spawn_after_runtime_dropped ... ok
+test threaded_scheduler_1_thread::spawn_blocking_after_shutdown_fails ... ok
+test threaded_scheduler_1_thread::spawn_blocking_started_before_shutdown_continues ... ok
+test threaded_scheduler_1_thread::tcp_listener_bind ... ok
+test threaded_scheduler_1_thread::tcp_listener_connect_after_shutdown ... ignored
+test threaded_scheduler_1_thread::tcp_listener_connect_before_shutdown ... ignored
+test threaded_scheduler_1_thread::thread_park_ok ... ok
+test threaded_scheduler_1_thread::udp_socket_bind ... ok
+test threaded_scheduler_1_thread::udp_stream_bind_after_shutdown ... ignored
+test threaded_scheduler_1_thread::udp_stream_bind_before_shutdown ... ignored
+test threaded_scheduler_1_thread::unix_listener_bind_after_shutdown ... ignored
+test threaded_scheduler_1_thread::unix_listener_shutdown_after_accept ... ignored
+test threaded_scheduler_1_thread::unix_listener_shutdown_after_bind ... ignored
+test threaded_scheduler_1_thread_only::sleep ... ok
+test threaded_scheduler_1_thread_only::sleep_after_shutdown_panics - should panic ... ok
+test threaded_scheduler_1_thread_only::sleep_before_shutdown_panics - should panic ... ok
+test threaded_scheduler_1_thread_only::unix_listener_bind ... ok
+test threaded_scheduler_4_threads::basic_fs ... ok
+test threaded_scheduler_4_threads::basic_spawn_blocking ... ok
+test threaded_scheduler_4_threads::fs_shutdown_before_started ... ok
+test threaded_scheduler_4_threads::nesting - should panic ... ok
+test threaded_scheduler_4_threads::spawn_after_runtime_dropped ... ok
+test threaded_scheduler_4_threads::spawn_blocking_after_shutdown_fails ... ok
+test threaded_scheduler_4_threads::spawn_blocking_started_before_shutdown_continues ... ok
+test threaded_scheduler_4_threads::tcp_listener_bind ... ok
+test threaded_scheduler_4_threads::tcp_listener_connect_after_shutdown ... ignored
+test threaded_scheduler_4_threads::tcp_listener_connect_before_shutdown ... ignored
+test threaded_scheduler_4_threads::thread_park_ok ... ok
+test threaded_scheduler_4_threads::udp_socket_bind ... ok
+test threaded_scheduler_4_threads::udp_stream_bind_after_shutdown ... ignored
+test threaded_scheduler_4_threads::udp_stream_bind_before_shutdown ... ignored
+test threaded_scheduler_4_threads::unix_listener_bind_after_shutdown ... ignored
+test threaded_scheduler_4_threads::unix_listener_shutdown_after_accept ... ignored
+test threaded_scheduler_4_threads::unix_listener_shutdown_after_bind ... ignored
+test threaded_scheduler_4_threads_only::sleep ... ok
+test threaded_scheduler_4_threads_only::sleep_after_shutdown_panics - should panic ... ok
+test threaded_scheduler_4_threads_only::sleep_before_shutdown_panics - should panic ... ok
+test threaded_scheduler_4_threads_only::unix_listener_bind ... ok
+test unbounded_mpsc_channel ... ok
+test yield_in_block_in_place ... ok
+
+test result: ok. 42 passed; 0 failed; 21 ignored; 0 measured; 0 filtered out; finished in 3.55s
+
+     Running tests/rt_local.rs (target/debug/deps/rt_local-a3a4345b65818777)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/rt_metrics.rs (target/debug/deps/rt_metrics-c7e5d284b21511ea)
+
+running 7 tests
+test global_queue_depth_current_thread ... ok
+test global_queue_depth_multi_thread ... ok
+test num_alive_tasks ... ok
+test num_workers ... ok
+test worker_park_count ... ok
+test worker_park_unpark_count ... ok
+test worker_total_busy_duration ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+     Running tests/rt_panic.rs (target/debug/deps/rt_panic-b9abb446233e7611)
+
+running 6 tests
+test builder_event_interval_interval_panic_caller ... ok
+test builder_global_queue_interval_panic_caller ... ok
+test builder_max_blocking_threads_panic_caller ... ok
+test builder_worker_threads_panic_caller ... ok
+test current_handle_panic_caller ... ok
+test into_panic_panic_caller ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/rt_poll_callbacks.rs (target/debug/deps/rt_poll_callbacks-2b87dd80993a0845)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/rt_shutdown_err.rs (target/debug/deps/rt_shutdown_err-52d45c2cd8825c23)
+
+running 5 tests
+test test_is_not_rt_shutdown_err ... ok
+test test_is_rt_shutdown_err ... ok
+test test_join_error_cancelled ... ok
+test test_join_error_panic ... ok
+test test_other_error_kinds_and_strings ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/rt_threaded.rs (target/debug/deps/rt_threaded-3c2ceed5fe84e6d8)
+
+running 26 tests
+test blocking ... ok
+test coop_and_block_in_place ... ok
+test drop_threadpool_drops_futures ... ok
+test global_queue_interval_set_to_one ... ok
+test hang_on_shutdown ... ok
+test lifo_slot_budget ... ok
+test many_multishot_futures ... ok
+test many_oneshot_futures ... ok
+test max_blocking_threads ... ok
+test max_blocking_threads_set_to_zero - should panic ... ok
+test multi_threadpool ... ok
+test mutex_in_block_in_place ... ok
+test single_thread ... ok
+test spawn_shutdown ... ok
+test spawn_two ... ok
+test start_stop_callbacks_called ... ok
+test test_block_in_place1 - should panic ... ok
+test test_block_in_place2 ... ok
+test test_block_in_place3 - should panic ... ok
+test test_block_in_place4 ... ok
+test test_nested_block_in_place_with_block_on_between ... ok
+test test_tuning ... ok
+test wake_deferred_tasks_before_block_in_place ... ok
+test wake_during_shutdown ... ok
+test yield_after_block_in_place ... ok
+test yield_now_in_block_in_place ... ok
+
+test result: ok. 26 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 8.50s
+
+     Running tests/rt_time_start_paused.rs (target/debug/deps/rt_time_start_paused-72d723d2fd3e1c8b)
+
+running 1 test
+test test_start_paused ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/rt_unstable_metrics.rs (target/debug/deps/rt_unstable_metrics-8bc873f01eb972be)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/signal_ctrl_c.rs (target/debug/deps/signal_ctrl_c-89574c6e0b032efc)
+
+running 1 test
+test ctrl_c ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/signal_drop_recv.rs (target/debug/deps/signal_drop_recv-b828f67fdfcdf231)
+
+running 1 test
+test drop_then_get_a_signal ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/signal_drop_rt.rs (target/debug/deps/signal_drop_rt-c0745453f1929488)
+
+running 1 test
+test dropping_loops_does_not_cause_starvation ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/signal_drop_signal.rs (target/debug/deps/signal_drop_signal-0002d26474d62846)
+
+running 1 test
+test dropping_signal_does_not_deregister_any_other_instances ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/signal_info.rs (target/debug/deps/signal_info-480d7dcade5e745b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/signal_multi_rt.rs (target/debug/deps/signal_multi_rt-5540c498ae727910)
+
+running 1 test
+test multi_loop ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/signal_no_rt.rs (target/debug/deps/signal_no_rt-0b75da05cd42cab5)
+
+running 1 test
+test no_runtime_panics_creating_signals - should panic ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/signal_notify_both.rs (target/debug/deps/signal_notify_both-271606d1c6c233aa)
+
+running 1 test
+test notify_both ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/signal_panic.rs (target/debug/deps/signal_panic-f913c8cb00f35f42)
+
+running 1 test
+test signal_panic_caller ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/signal_realtime.rs (target/debug/deps/signal_realtime-c1d77dbdb7298171)
+
+running 1 test
+test signal_realtime ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/signal_twice.rs (target/debug/deps/signal_twice-72193b8f88f822b9)
+
+running 1 test
+test twice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/signal_usr1.rs (target/debug/deps/signal_usr1-f65d57bcb7377d47)
+
+running 1 test
+test signal_usr1 ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sync_barrier.rs (target/debug/deps/sync_barrier-f7265ad7677cc757)
+
+running 5 tests
+test barrier_future_is_send ... ok
+test lots ... ok
+test single ... ok
+test tango ... ok
+test zero_does_not_block ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sync_broadcast.rs (target/debug/deps/sync_broadcast-017844454f6a2b6e)
+
+running 32 tests
+test broadcast_sender_closed ... ok
+test broadcast_sender_closed_with_extra_subscribe ... ok
+test broadcast_sender_new_must_be_closed ... ok
+test capacity_too_big - should panic ... ok
+test change_tasks ... ok
+test drop_rx_while_values_remain ... ok
+test dropping_sender_does_not_overwrite ... ok
+test dropping_tx_notifies_rx ... ok
+test lagging_receiver_recovers_after_wrap_closed_1 ... ok
+test lagging_receiver_recovers_after_wrap_closed_2 ... ok
+test lagging_receiver_recovers_after_wrap_open ... ok
+test lagging_rx ... ok
+test panic_in_clone ... ok
+test receiver_len_with_lagged ... ok
+test receiver_recv_is_cooperative ... ok
+test resubscribe_lagged ... ok
+test resubscribe_points_to_tail ... ok
+test resubscribe_to_closed_channel ... ok
+test send_in_waker_drop ... ok
+test send_no_rx ... ok
+test send_recv_bounded ... ok
+test send_slow_rx ... ok
+test send_try_recv_bounded ... ok
+test send_two_recv ... ok
+test send_two_recv_bounded ... ok
+test sender_len ... ok
+test sender_len_random ... ok
+test single_capacity_recvs ... ok
+test single_capacity_recvs_after_drop_1 ... ok
+test single_capacity_recvs_after_drop_2 ... ok
+test unconsumed_messages_are_dropped ... ok
+test zero_capacity - should panic ... ok
+
+test result: ok. 32 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sync_broadcast_weak.rs (target/debug/deps/sync_broadcast_weak-96b1d3af4c9e78a4)
+
+running 10 tests
+test downgrade_drop_upgrade ... ok
+test downgrade_upgrade_sender_failure ... ok
+test sender_strong_and_weak_conut ... ok
+test sender_strong_count_when_cloned ... ok
+test sender_strong_count_when_dropped ... ok
+test sender_weak_count_when_downgraded ... ok
+test sender_weak_count_when_dropped ... ok
+test test_rx_is_closed_when_dropping_all_senders_except_weak_senders ... ok
+test test_tx_count_weak_sender ... ok
+test weak_sender ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sync_errors.rs (target/debug/deps/sync_errors-50ee31980d6cf72e)
+
+running 3 tests
+test mpsc_error_bound ... ok
+test oneshot_error_bound ... ok
+test watch_error_bound ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sync_mpsc.rs (target/debug/deps/sync_mpsc-c6b88d823d9e5a81)
+
+running 91 tests
+test async_send_recv_many_with_buffer ... ok
+test async_send_recv_unbounded ... ok
+test async_send_recv_with_buffer ... ok
+test blocking_recv ... ok
+test blocking_recv_async - should panic ... ok
+test blocking_send ... ok
+test blocking_send_async - should panic ... ok
+test buffer_gteq_one - should panic ... ok
+test drop_all_elements_during_panic ... ok
+test drop_permit_iterator_releases_permits ... ok
+test drop_permit_releases_permit ... ok
+test dropping_rx_closes_channel ... ok
+test dropping_rx_closes_channel_for_try ... ok
+test no_t_bounds_buffer ... ok
+test no_t_bounds_unbounded ... ok
+test permit_available_not_acquired_close ... ok
+test ready_close_cancel_bounded ... ok
+test recv_close_gets_none_idle ... ok
+test recv_close_gets_none_reserved ... ok
+test recv_timeout ... ok
+test recv_timeout_panic - should panic ... ok
+test reserve_disarm ... ok
+test reserve_many_above_cap ... ok
+test reserve_many_and_send ... ok
+test reserve_many_on_closed_channel ... ok
+test reserve_many_zero ... ok
+test send_recv_buffer_limited ... ok
+test send_recv_many_bounded_capacity ... ok
+test send_recv_many_unbounded ... ok
+test send_recv_many_unbounded_capacity ... ok
+test send_recv_stream_unbounded ... ok
+test send_recv_stream_with_buffer ... ok
+test send_recv_unbounded ... ok
+test send_recv_with_buffer ... ok
+test start_send_past_cap ... ok
+test test_is_empty_32_msgs ... ok
+test test_rx_is_closed_when_calling_close_with_sender ... ok
+test test_rx_is_closed_when_dropping_all_senders ... ok
+test test_rx_is_closed_when_there_are_messages_and_close_is_called ... ok
+test test_rx_is_closed_when_there_are_no_senders_and_there_are_messages ... ok
+test test_rx_is_empty_all_senders_are_dropped_and_messages_consumed ... ok
+test test_rx_is_empty_when_all_messages_are_consumed ... ok
+test test_rx_is_empty_when_no_messages_were_sent ... ok
+test test_rx_is_not_closed_when_there_are_permits_but_not_senders ... ok
+test test_rx_is_not_closed_when_there_are_senders ... ok
+test test_rx_is_not_closed_when_there_are_senders_and_buffer_filled ... ok
+test test_rx_is_not_empty_when_all_but_one_messages_are_consumed ... ok
+test test_rx_is_not_empty_when_the_buffer_is_full ... ok
+test test_rx_is_not_empty_when_there_are_messages_in_the_buffer ... ok
+test test_rx_len_on_empty_channel ... ok
+test test_rx_len_on_empty_channel_without_senders ... ok
+test test_rx_len_on_filled_channel ... ok
+test test_rx_len_on_filled_channel_without_senders ... ok
+test test_rx_len_when_close_is_called ... ok
+test test_rx_len_when_close_is_called_after_dropping_sender ... ok
+test test_rx_len_when_close_is_called_before_dropping_sender ... ok
+test test_rx_len_when_consuming_all_messages ... ok
+test test_rx_unbounded_is_closed_when_calling_close_with_sender ... ok
+test test_rx_unbounded_is_closed_when_dropping_all_senders ... ok
+test test_rx_unbounded_is_closed_when_there_are_messages_and_close_is_called ... ok
+test test_rx_unbounded_is_closed_when_there_are_no_senders_and_there_are_messages ... ok
+test test_rx_unbounded_is_empty_all_senders_are_dropped_and_messages_consumed ... ok
+test test_rx_unbounded_is_empty_when_all_messages_are_consumed ... ok
+test test_rx_unbounded_is_empty_when_no_messages_were_sent ... ok
+test test_rx_unbounded_is_not_closed_when_there_are_senders ... ok
+test test_rx_unbounded_is_not_empty_when_all_but_one_messages_are_consumed ... ok
+test test_rx_unbounded_is_not_empty_when_there_are_messages_in_the_buffer ... ok
+test test_rx_unbounded_len_on_empty_channel ... ok
+test test_rx_unbounded_len_on_empty_channel_without_senders ... ok
+test test_rx_unbounded_len_when_close_is_called ... ok
+test test_rx_unbounded_len_when_close_is_called_after_dropping_sender ... ok
+test test_rx_unbounded_len_when_close_is_called_before_dropping_sender ... ok
+test test_rx_unbounded_len_when_consuming_all_messages ... ok
+test test_rx_unbounded_len_with_multiple_messages ... ok
+test test_rx_unbounded_len_with_multiple_messages_and_dropped_senders ... ok
+test test_tx_capacity ... ok
+test try_recv_after_receiver_close ... ok
+test try_recv_bounded ... ok
+test try_recv_close_while_empty_bounded ... ok
+test try_recv_close_while_empty_unbounded ... ok
+test try_recv_unbounded ... ok
+test try_reserve_fails ... ok
+test try_reserve_many_and_send ... ok
+test try_reserve_many_edge_cases ... ok
+test try_reserve_many_full ... ok
+test try_reserve_many_on_closed_channel ... ok
+test try_reserve_many_zero ... ok
+test try_send_fail ... ok
+test try_send_fail_with_try_recv ... ok
+test tx_close_gets_none ... ok
+test unconsumed_messages_are_dropped ... ok
+
+test result: ok. 91 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.15s
+
+     Running tests/sync_mpsc_weak.rs (target/debug/deps/sync_mpsc_weak-0adea8434158ed3c)
+
+running 28 tests
+test actor_weak_sender ... ok
+test actor_weak_unbounded_sender ... ok
+test downgrade_drop_upgrade ... ok
+test downgrade_drop_upgrade_unbounded ... ok
+test downgrade_get_permit_upgrade_no_senders ... ok
+test downgrade_upgrade_get_permit_no_senders ... ok
+test downgrade_upgrade_sender_failure ... ok
+test downgrade_upgrade_sender_success ... ok
+test downgrade_upgrade_unbounded_sender_failure ... ok
+test downgrade_upgrade_unbounded_sender_success ... ok
+test sender_strong_and_weak_conut ... ok
+test sender_strong_count_when_cloned ... ok
+test sender_strong_count_when_dropped ... ok
+test sender_weak_count_when_downgraded ... ok
+test sender_weak_count_when_dropped ... ok
+test test_msgs_dropped_on_rx_drop ... ok
+test test_msgs_dropped_on_unbounded_rx_drop ... ok
+test test_rx_is_closed_when_dropping_all_senders_except_weak_senders ... ok
+test test_rx_unbounded_is_closed_when_dropping_all_senders_except_weak_senders ... ok
+test test_tx_count_weak_sender ... ok
+test test_tx_count_weak_unbounded_sender ... ok
+test unbounded_sender_strong_and_weak_conut ... ok
+test unbounded_sender_strong_count_when_cloned ... ok
+test unbounded_sender_strong_count_when_dropped ... ok
+test unbounded_sender_weak_count_when_downgraded ... ok
+test unbounded_sender_weak_count_when_dropped ... ok
+test weak_sender ... ok
+test weak_unbounded_sender ... ok
+
+test result: ok. 28 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/sync_mutex.rs (target/debug/deps/sync_mutex-d526decd762cede4)
+
+running 7 tests
+test aborted_future_1 ... ok
+test aborted_future_2 ... ok
+test debug_format ... ok
+test mutex_debug ... ok
+test readiness ... ok
+test straight_execution ... ok
+test try_lock ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/sync_mutex_owned.rs (target/debug/deps/sync_mutex_owned-62a994498688081f)
+
+running 6 tests
+test aborted_future_1 ... ok
+test aborted_future_2 ... ok
+test debug_format ... ok
+test readiness ... ok
+test straight_execution ... ok
+test try_lock_owned ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/sync_notify.rs (target/debug/deps/sync_notify-05ab71e883cff1f5)
+
+running 18 tests
+test notified_drop_notified_notify ... ok
+test notified_multi_notify ... ok
+test notified_multi_notify_drop_one ... ok
+test notified_multi_notify_last_drop ... ok
+test notified_multi_notify_one_drop ... ok
+test notified_one_notify ... ok
+test notify_in_drop_after_wake ... ok
+test notify_multi_notified_last ... ok
+test notify_multi_notified_one ... ok
+test notify_notified_multi ... ok
+test notify_notified_one ... ok
+test notify_one_after_dropped_all ... ok
+test test_enable_after_poll ... ok
+test test_enable_consumes_permit ... ok
+test test_notify_one_after_enable ... ok
+test test_notify_one_not_enabled ... ok
+test test_poll_after_enable ... ok
+test test_waker_update ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sync_notify_owned.rs (target/debug/deps/sync_notify_owned-7ea50e5f61a9f04c)
+
+running 18 tests
+test notified_drop_notified_notify ... ok
+test notified_multi_notify ... ok
+test notified_multi_notify_drop_one ... ok
+test notified_multi_notify_last_drop ... ok
+test notified_multi_notify_one_drop ... ok
+test notified_one_notify ... ok
+test notify_in_drop_after_wake ... ok
+test notify_multi_notified_last ... ok
+test notify_multi_notified_one ... ok
+test notify_notified_multi ... ok
+test notify_notified_one ... ok
+test notify_one_after_dropped_all ... ok
+test test_enable_after_poll ... ok
+test test_enable_consumes_permit ... ok
+test test_notify_one_after_enable ... ok
+test test_notify_one_not_enabled ... ok
+test test_poll_after_enable ... ok
+test test_waker_update ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sync_once_cell.rs (target/debug/deps/sync_once_cell-4345cf530a92484e)
+
+running 12 tests
+test drop_cell ... ok
+test drop_cell_new_with ... ok
+test drop_into_inner ... ok
+test drop_into_inner_new_with ... ok
+test from ... ok
+test get_or_init ... ok
+test get_or_init_panic ... ok
+test get_or_try_init ... ok
+test get_uninit ... ok
+test set_and_get ... ok
+test set_twice ... ok
+test set_while_initializing ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sync_oneshot.rs (target/debug/deps/sync_oneshot-92697c8305f2cf0a)
+
+running 22 tests
+test async_rx_closed ... ok
+test async_send_recv ... ok
+test close_after_recv ... ok
+test close_rx ... ok
+test close_try_recv_poll - should panic ... ok
+test close_tx ... ok
+test drops_tasks ... ok
+test explicit_close_poll ... ok
+test explicit_close_try_recv ... ok
+test receiver_changes_task ... ok
+test receiver_is_empty_drop ... ok
+test receiver_is_empty_rx_close ... ok
+test receiver_is_empty_send ... ok
+test receiver_is_empty_try_recv ... ok
+test receiver_is_terminated_drop ... ok
+test receiver_is_terminated_rx_close ... ok
+test receiver_is_terminated_send ... ok
+test receiver_is_terminated_try_recv ... ok
+test send_recv ... ok
+test sender_changes_task ... ok
+test try_recv_after_completion ... ok
+test try_recv_after_completion_await ... ok
+
+test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sync_panic.rs (target/debug/deps/sync_panic-d32f6a8e3327b662)
+
+running 14 tests
+test broadcast_channel_panic_caller ... ok
+test mpsc_bounded_channel_panic_caller ... ok
+test mpsc_bounded_receiver_blocking_recv_many_panic_caller ... ok
+test mpsc_bounded_receiver_blocking_recv_panic_caller ... ok
+test mpsc_bounded_sender_blocking_send_panic_caller ... ok
+test mpsc_unbounded_receiver_blocking_recv_many_panic_caller ... ok
+test mpsc_unbounded_receiver_blocking_recv_panic_caller ... ok
+test mutex_blocking_lock_panic_caller ... ok
+test oneshot_blocking_recv_panic_caller ... ok
+test rwlock_blocking_read_panic_caller ... ok
+test rwlock_blocking_write_panic_caller ... ok
+test rwlock_with_max_readers_panic_caller ... ok
+test semaphore_merge_unrelated_owned_permits ... ok
+test semaphore_merge_unrelated_permits ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sync_rwlock.rs (target/debug/deps/sync_rwlock-8b3fc9c3e4a80106)
+
+running 17 tests
+test downgrade_map ... ok
+test exhaust_reading ... ok
+test into_inner ... ok
+test multithreaded ... ok
+test read_exclusive_pending ... ok
+test read_shared ... ok
+test read_uncontested ... ok
+test try_downgrade_map ... ok
+test try_read_try_write ... ok
+test try_write ... ok
+test write_exclusive_pending ... ok
+test write_order ... ok
+test write_read_shared_drop_pending ... ok
+test write_read_shared_pending ... ok
+test write_shared_drop ... ok
+test write_shared_pending ... ok
+test write_uncontested ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/sync_semaphore.rs (target/debug/deps/sync_semaphore-fac7c148ea3f2e46)
+
+running 14 tests
+test acquire ... ok
+test add_max_amount_permits ... ok
+test add_more_than_max_amount_permits1 - should panic ... ok
+test add_more_than_max_amount_permits2 - should panic ... ok
+test add_permits ... ok
+test forget ... ok
+test merge ... ok
+test merge_unrelated_permits - should panic ... ok
+test no_panic_at_maxpermits ... ok
+test no_permits ... ok
+test panic_when_exceeds_maxpermits - should panic ... ok
+test split ... ok
+test stress_test ... ok
+test try_acquire ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/sync_semaphore_owned.rs (target/debug/deps/sync_semaphore_owned-532a5f7b6d7adea4)
+
+running 10 tests
+test acquire ... ok
+test acquire_many ... ok
+test add_permits ... ok
+test forget ... ok
+test merge ... ok
+test merge_unrelated_permits - should panic ... ok
+test split ... ok
+test stress_test ... ok
+test try_acquire ... ok
+test try_acquire_many ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/sync_set_once.rs (target/debug/deps/sync_set_once-ef043a92df106718)
+
+running 14 tests
+test drop_cell ... ok
+test drop_cell_new_with ... ok
+test drop_into_inner ... ok
+test drop_into_inner_new_with ... ok
+test from ... ok
+test get_uninit ... ok
+test into_inner_int_empty_setonce ... ok
+test is_none_initializing ... ok
+test is_some_initializing ... ok
+test set_and_get ... ok
+test set_and_wait ... ok
+test set_and_wait_multiple_threads ... ok
+test set_and_wait_threads ... ok
+test set_twice ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sync_watch.rs (target/debug/deps/sync_watch-fdc363a96f8afac3)
+
+running 22 tests
+test borrow_and_update ... ok
+test changed_errors_on_closed_channel_with_seen_value ... ok
+test changed_succeeds_on_closed_channel_with_unseen_value ... ok
+test has_changed_errors_on_closed_channel_with_seen_value ... ok
+test has_changed_errors_on_closed_channel_with_unseen_value ... ok
+test multi_rx ... ok
+test multiple_sender ... ok
+test poll_close ... ok
+test receiver_changed_is_cooperative ... ok
+test receiver_changed_is_cooperative_ok ... ok
+test receiver_is_notified_when_last_sender_is_dropped ... ok
+test receiver_wait_for_is_cooperative ... ok
+test receiver_wait_for_is_cooperative_ok ... ok
+test reopened_after_subscribe ... ok
+test rx_mark_changed ... ok
+test rx_mark_unchanged ... ok
+test rx_observes_final_value ... ok
+test rx_version_underflow ... ok
+test send_modify_panic ... ok
+test sender_closed_is_cooperative ... ok
+test single_rx_recv ... ok
+test wait_for_errors_on_closed_channel_true_predicate ... ok
+
+test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/task_abort.rs (target/debug/deps/task_abort-e28f0b5947cc39ae)
+
+running 8 tests
+test remote_abort_local_set_3929 ... ok
+test test_abort_task_that_panics_on_drop_contained ... ok
+test test_abort_task_that_panics_on_drop_returned ... ok
+test test_abort_wakes_task_3964 ... ok
+test test_abort_without_panic_3157 ... ok
+test test_abort_without_panic_3662 ... ok
+test test_join_error_debug ... ok
+test test_join_error_display ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/task_blocking.rs (target/debug/deps/task_blocking-9901388c8c912b71)
+
+running 16 tests
+test basic_blocking ... ok
+test block_in_block ... ok
+test block_in_blocking ... ok
+test blocking_task_wakes_paused_runtime ... ok
+test blocking_when_paused ... ok
+test can_enter_current_thread_rt_from_within_block_in_place ... ok
+test can_shutdown_now_in_runtime ... ok
+test can_shutdown_with_zero_timeout_in_runtime ... ok
+test coop_disabled_in_block_in_place ... ok
+test coop_disabled_in_block_in_place_in_block_on ... ok
+test no_block_in_current_thread_block_on - should panic ... ok
+test no_block_in_current_thread_scheduler - should panic ... ok
+test panicking_blocking_task_wakes_paused_runtime ... ok
+test unawaited_blocking_task_wakes_paused_runtime ... ok
+test useful_panic_message_when_dropping_rt_in_rt ... ok
+test yes_block_in_threaded_block_on ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.71s
+
+     Running tests/task_builder.rs (target/debug/deps/task_builder-ad044a8a816d8d94)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/task_hooks.rs (target/debug/deps/task_hooks-f348960ef0e5c84f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/task_id.rs (target/debug/deps/task_id-e44e9764d90e2167)
+
+running 17 tests
+test task_id_block_in_place_block_on_spawn ... ok
+test task_id_collision_current_thread ... ok
+test task_id_collision_multi_thread ... ok
+test task_id_future_destructor_abort ... ok
+test task_id_future_destructor_completion ... ok
+test task_id_inside_block_on_panic_caller ... ok
+test task_id_nested_spawn_local ... ok
+test task_id_output_destructor_handle_dropped_after_completion ... ok
+test task_id_output_destructor_handle_dropped_before_completion ... ok
+test task_id_outside_task_panic_caller ... ok
+test task_id_spawn ... ok
+test task_id_spawn_blocking ... ok
+test task_id_spawn_local ... ok
+test task_ids_match_current_thread ... ok
+test task_ids_match_multi_thread ... ok
+test task_try_id_inside_block_on ... ok
+test task_try_id_outside_task ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/task_join_set.rs (target/debug/deps/task_join_set-93b8b673e05dd17e)
+
+running 19 tests
+test abort_all ... ok
+test abort_tasks ... ok
+test alternating ... ok
+test extend ... ok
+test join_all ... ok
+test join_set_coop ... ok
+test runtime_gone ... ok
+test spawn_local::local_set::spawn_then_drop ... ok
+test spawn_local::local_set::spawn_then_join_next ... ok
+test spawn_local::local_set::spawn_then_shutdown ... ok
+test spawn_local::panic_in_multi_thread_runtime - should panic ... ok
+test spawn_local::panic_outside_any_runtime - should panic ... ok
+test spawn_local_on::local_set::spawn_then_drop ... ok
+test spawn_local_on::local_set::spawn_then_join_next ... ok
+test spawn_local_on::local_set::spawn_then_shutdown ... ok
+test task_panics ... ok
+test test_abort_on_drop ... ok
+test test_with_sleep ... ok
+test try_join_next ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/task_local.rs (target/debug/deps/task_local-f1fc419a28d77fc0)
+
+running 6 tests
+test get_value ... ok
+test local ... ok
+test poll_after_take_value_should_fail ... ok
+test take_value ... ok
+test task_local_available_on_abort ... ok
+test task_local_available_on_completion_drop ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/task_local_set.rs (target/debug/deps/task_local_set-91c186def362c4a6)
+
+running 27 tests
+test acquire_mutex_in_drop ... ok
+test all_spawns_are_local ... ok
+test block_in_place_cases::block_in_place_in_run_until_ct - should panic ... ok
+test block_in_place_cases::block_in_place_in_run_until_mt - should panic ... ok
+test block_in_place_cases::block_in_place_in_spawn_local_ct - should panic ... ok
+test block_in_place_cases::block_in_place_in_spawn_local_drop_ct - should panic ... ok
+test block_in_place_cases::block_in_place_in_spawn_local_drop_mt - should panic ... ok
+test block_in_place_cases::block_in_place_in_spawn_local_mt - should panic ... ok
+test block_in_place_cases::local_threadpool_blocking_in_place - should panic ... ok
+test drop_cancels_remote_tasks ... ok
+test drop_cancels_tasks ... ok
+test enter_guard_spawn ... ok
+test join_local_future_elsewhere ... ok
+test local_current_thread_scheduler ... ok
+test local_tasks_are_polled_after_tick ... ok
+test local_tasks_wake_join_all ... ok
+test local_threadpool ... ok
+test local_threadpool_blocking_run ... ok
+test local_threadpool_timer ... ok
+test localset_future_drives_all_local_futs ... ok
+test localset_future_threadpool ... ok
+test localset_future_timers ... ok
+test localset_in_thread_local ... ok
+test nested_spawn_is_local ... ok
+test sleep_with_local_enter_guard ... ok
+test spawn_wakes_localset ... ok
+test store_local_set_in_thread_local_with_runtime ... ok
+
+test result: ok. 27 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+     Running tests/task_panic.rs (target/debug/deps/task_panic-e19bbedf042cc325)
+
+running 7 tests
+test block_in_place_panic_caller ... ok
+test local_key_get_panic_caller ... ok
+test local_key_sync_scope_panic_caller ... ok
+test local_key_with_panic_caller ... ok
+test local_set_block_on_panic_caller ... ok
+test local_set_spawn_local_panic_caller ... ok
+test spawn_panic_caller ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/task_trace_self.rs (target/debug/deps/task_trace_self-a5f7a7994f373009)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/task_yield_now.rs (target/debug/deps/task_yield_now-ae7695a937323682)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tcp_accept.rs (target/debug/deps/tcp_accept-9015d80e253bfcde)
+
+running 7 tests
+test accept_many ... ok
+test host_str ... ok
+test ip_port_tuple ... ok
+test ip_str ... ok
+test no_extra_poll ... ok
+test socket_addr ... ok
+test str_port_tuple ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/tcp_connect.rs (target/debug/deps/tcp_connect-d7aab9018b56c8e6)
+
+running 8 tests
+test connect_addr_host_str_port_tuple ... ok
+test connect_addr_host_string ... ok
+test connect_addr_ip_port_tuple ... ok
+test connect_addr_ip_str_port_tuple ... ok
+test connect_addr_ip_str_slice ... ok
+test connect_addr_ip_string ... ok
+test connect_v4 ... ok
+test connect_v6 ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tcp_echo.rs (target/debug/deps/tcp_echo-4c49ad8ce3c62e13)
+
+running 1 test
+test echo_server ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/tcp_into_split.rs (target/debug/deps/tcp_into_split-e4e133d86c3c528a)
+
+running 3 tests
+test drop_write ... ok
+test reunite ... ok
+test split ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/tcp_into_std.rs (target/debug/deps/tcp_into_std-29522293c36630e0)
+
+running 1 test
+test tcp_into_std ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tcp_peek.rs (target/debug/deps/tcp_peek-f944a6e0c98f2e70)
+
+running 1 test
+test peek ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tcp_shutdown.rs (target/debug/deps/tcp_shutdown-ac6b16654f93d743)
+
+running 3 tests
+test shutdown ... ok
+test shutdown_after_tcp_reset ... ok
+test shutdown_multiple_calls ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tcp_socket.rs (target/debug/deps/tcp_socket-4bd0c148380f4047)
+
+running 13 tests
+test basic_linger ... ok
+test basic_usage_v4 ... ok
+test basic_usage_v6 ... ok
+test bind_before_connect ... ok
+test keepalive ... ok
+test linger ... ok
+test nodelay ... ok
+test recv_buffer_size ... ok
+test reuseaddr ... ok
+test reuseport ... ok
+test send_buffer_size ... ok
+test tclass_v6 ... ok
+test tos_v4 ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tcp_split.rs (target/debug/deps/tcp_split-54b8fc73a4fc4384)
+
+running 1 test
+test split ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tcp_stream.rs (target/debug/deps/tcp_stream-e2c18f99f0e4220c)
+
+running 8 tests
+test buffer_not_included_in_future ... ok
+test poll_read_ready ... ok
+test poll_write_ready ... ok
+test read_closed ... ok
+test set_linger ... ok
+test try_read_buf ... ok
+test try_read_write ... ok
+test write_closed ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.48s
+
+     Running tests/test_clock.rs (target/debug/deps/test_clock-6701f9dd70eaf449)
+
+running 5 tests
+test advancing_time_when_time_is_not_frozen_panics - should panic ... ok
+test can_pause_after_resume ... ok
+test freezing_time_while_frozen_panics - should panic ... ok
+test resume_lets_time_move_forward_instead_of_resetting_it ... ok
+test resuming_time_when_not_frozen_panics - should panic ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/time_alt.rs (target/debug/deps/time_alt-3dc3ddec4b87f72a)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/time_interval.rs (target/debug/deps/time_interval-eed14b7fee290ca2)
+
+running 12 tests
+test burst ... ok
+test delay ... ok
+test interval_doesnt_panic_max_duration_when_polling ... ok
+test interval_zero_duration - should panic ... ok
+test reset ... ok
+test reset_after ... ok
+test reset_at ... ok
+test reset_at_bigger_than_interval ... ok
+test reset_immediately ... ok
+test skip ... ok
+test stream_with_interval_poll_tick_no_waking ... ok
+test stream_with_interval_poll_tick_self_waking ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/time_panic.rs (target/debug/deps/time_panic-e132d2f700bacd26)
+
+running 5 tests
+test interval_at_panic_caller ... ok
+test interval_panic_caller ... ok
+test pause_panic_caller ... ok
+test resume_panic_caller ... ok
+test timeout_panic_caller ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/time_pause.rs (target/debug/deps/time_pause-cba7f4fbb04b2213)
+
+running 16 tests
+test advance_after_poll ... ok
+test advance_multi_with_timer ... ok
+test advance_once_with_timer ... ok
+test exact_1ms_advance ... ok
+test interval ... ok
+test pause_time_in_main ... ok
+test pause_time_in_main_threads - should panic ... ok
+test pause_time_in_spawn_threads ... ok
+test pause_time_in_task ... ok
+test paused_time_is_deterministic ... ok
+test regression_3710_with_submillis_advance ... ok
+test sleep_no_poll ... ok
+test sleep_same_task ... ok
+test sleep_same_task_no_poll ... ok
+test test_time_advance_3ms_and_change ... ok
+test test_time_advance_sub_ms ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.23s
+
+     Running tests/time_rt.rs (target/debug/deps/time_rt-644c286608ff4fed)
+
+running 4 tests
+test starving ... ok
+test timeout_value ... ok
+test timer_with_current_thread_scheduler ... ok
+test timer_with_threaded_runtime ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running tests/time_sleep.rs (target/debug/deps/time_sleep-1e2098d34bb6fc5f)
+
+running 21 tests
+test creating_sleep_outside_of_context - should panic ... ok
+test delayed_sleep_level_0 ... ok
+test delayed_sleep_wrapping_level_0 ... ok
+test drop_after_reschedule_at_new_scheduled_time ... ok
+test drop_from_wake ... ok
+test exactly_max ... ok
+test greater_than_max ... ok
+test immediate_sleep ... ok
+test is_elapsed ... ok
+test issue_5183 ... ok
+test long_sleeps ... ok
+test multi_long_sleeps ... ok
+test no_out_of_bounds_close_to_max ... ok
+test reset_after_firing ... ok
+test reset_future_sleep_after_fire ... ok
+test reset_future_sleep_before_fire ... ok
+test reset_past_sleep_before_fire ... ok
+test reset_past_sleep_before_turn ... ok
+test reset_sleep_to_past ... ok
+test short_sleeps ... ok
+test sub_ms_delayed_sleep ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.13s
+
+     Running tests/time_timeout.rs (target/debug/deps/time_timeout-bdb60e1352c8e3b9)
+
+running 8 tests
+test completed_future_past_deadline ... ok
+test deadline_future_elapses ... ok
+test deadline_now_elapses ... ok
+test future_and_deadline_in_future ... ok
+test future_and_timeout_in_future ... ok
+test simultaneous_deadline_future_completion ... ok
+test timeout_is_not_exhausted_by_future ... ok
+test very_large_timeout ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/time_wasm.rs (target/debug/deps/time_wasm-4c12b77870abf6b2)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tracing_sync.rs (target/debug/deps/tracing_sync-489e0a19c2a58545)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tracing_task.rs (target/debug/deps/tracing_task-0e2482fe4813289f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tracing_time.rs (target/debug/deps/tracing_time-6dad75c8b51bfbc2)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/udp.rs (target/debug/deps/udp-1bb7f62ac1505743)
+
+running 28 tests
+test broadcast ... ok
+test multicast_loop_v4 ... ok
+test multicast_loop_v6 ... ok
+test multicast_ttl_v4 ... ok
+test peek_sender ... ok
+test poll_peek_sender ... ok
+test poll_ready ... ok
+test recv_buf ... ok
+test recv_buf_from ... ok
+test send_recv ... ok
+test send_recv_poll ... ok
+test send_to_peek_from ... ok
+test send_to_peek_from_poll ... ok
+test send_to_recv_from ... ok
+test send_to_recv_from_poll ... ok
+test send_to_try_peek_from ... ok
+test split ... ok
+test split_chan ... ok
+test split_chan_poll ... ok
+test tclass_v6 ... ok
+test tos_v4 ... ok
+test try_peek_sender ... ok
+test try_recv_buf ... ok
+test try_recv_buf_from ... ok
+test try_send_recv ... ok
+test try_send_spawn ... ok
+test try_send_to_recv_from ... ok
+test ttl ... ok
+
+test result: ok. 28 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/uds_cred.rs (target/debug/deps/uds_cred-9d584c7523c2a1f4)
+
+running 1 test
+test test_socket_pair ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/uds_datagram.rs (target/debug/deps/uds_datagram-f7670eb10df52c72)
+
+running 12 tests
+test echo ... ok
+test echo_from ... ok
+test poll_ready ... ok
+test recv_buf ... ok
+test recv_buf_from ... ok
+test send_recv_poll ... ok
+test send_to_recv_from_poll ... ok
+test split ... ok
+test try_recv_buf_from ... ok
+test try_recv_buf_never_block ... ok
+test try_send_recv_never_block ... ok
+test try_send_to_recv_from ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/uds_socket.rs (target/debug/deps/uds_socket-0ec448558eaae3b7)
+
+running 3 tests
+test assert_usage ... ok
+test datagram_echo_server ... ok
+test listen_and_stream ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/uds_split.rs (target/debug/deps/uds_split-b4ef56d4f53a8cab)
+
+running 1 test
+test split ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/uds_stream.rs (target/debug/deps/uds_stream-7c5380961e7e5711)
+
+running 8 tests
+test abstract_socket_name ... ok
+test accept_read_write ... ok
+test epollhup ... ok
+test poll_read_ready ... ok
+test poll_write_ready ... ok
+test shutdown ... ok
+test try_read_buf ... ok
+test try_read_write ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/unwindsafe.rs (target/debug/deps/unwindsafe-0551452e93b86dbe)
+
+running 4 tests
+test join_handle_is_unwind_safe ... ok
+test net_types_are_unwind_safe ... ok
+test notify_is_unwind_safe ... ok
+test unix_net_types_are_unwind_safe ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+=== [4/5] Collect peaks ===
+=== [5/5] Write JSON ===

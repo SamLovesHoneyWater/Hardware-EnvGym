@@ -1,0 +1,43 @@
+{
+  "name": "serde-rs_serde",
+  "url": "https://github.com/serde-rs/serde",
+  "mvw": {
+    "mvw_command": "cargo build -p serde --features derive --tests --jobs 1 && cargo test -p serde --features derive --jobs 1 -- --test-threads=1",
+    "build_command": "cargo build -p serde --features derive --tests --jobs 1",
+    "run_command": "cargo test -p serde --features derive --jobs 1 -- --test-threads=1",
+    "input_scale": "serde crate with derive feature, single-job build and single-thread test",
+    "success_criteria": "both commands exit code 0"
+  },
+  "environment": {
+    "os": "Linux",
+    "rust_toolchain": "rustc 1.93.1 (01f6ddf75 2026-02-11)",
+    "methodology": "tutorial.md one-pass profiling; process-tree RSS peak (monitor_tree.sh), whole tree not single process; MVW actually run; multi-thread/multi-process peak included."
+  },
+  "static_triage": {
+    "requires_gpu": false,
+    "likely_bottlenecks": ["RAM", "CPU", "Disk"],
+    "notes": "Rust serialization framework; no GPU requirement; build/test are CPU and memory sensitive."
+  },
+  "peaks_observed": {
+    "build_peak_ram_gb": 0.2634,
+    "run_peak_ram_gb": 0.1222,
+    "peak_disk_gb": 0.1247,
+    "build_runtime_seconds": 12,
+    "run_runtime_seconds": 1,
+    "cpu_utilization_summary": "build moderate-high (cargo compiling crates), run moderate (unit and integration tests)"
+  },
+  "margins_used": "none",
+  "min_hardware": {
+    "build_min_spec": {
+      "min_ram_gb": 2,
+      "min_disk_gb": 1,
+      "min_vcpu": 2
+    },
+    "run_min_spec": {
+      "min_ram_gb": 2,
+      "min_disk_gb": 1,
+      "min_vcpu": 2
+    },
+    "summary": "2 vCPU / 2 GB RAM / 1 GB disk, no GPU. Raw process-tree peaks: build 0.2634 GB, run 0.1222 GB, disk 0.1247 GB."
+  }
+}

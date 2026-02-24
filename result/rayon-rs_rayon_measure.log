@@ -1,0 +1,12 @@
+=== [1/5] Clone 仓库 ===
+Cloning into '/home/cc/Label/rayon-rs_rayon_measure'...
+=== [2/5] Build 阶段：cargo build -p rayon -p rayon-core --tests ===
+=== [3/5] Run 阶段：cargo test -p rayon -p rayon-core ===
+=== [4/5] 汇总峰值 ===
+=== [5/5] 输出 JSON ===
+测量完成：/home/cc/Label/result/rayon-rs_rayon.json
+BUILD_PEAK_GB=2.6361
+RUN_PEAK_GB=0.9615
+DISK_GB=1.1353
+BUILD_RUNTIME_S=18
+RUN_RUNTIME_S=39

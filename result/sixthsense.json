@@ -1,0 +1,35 @@
+{
+  "name": "sixthsense",
+  "url": "https://github.com/uiuc-arc/sixthsense",
+  "mvw": {
+    "mvw_command": "python train.py -f csvs/lrm_features.csv -l csvs/lrm_metrics.csv -a rf -m rhat_min -suf avg -bw -plt -saveas plots/results_rhat_min_lrm.png -keep _ast_ dt_ var_min var_max data_size -st -tname lightspeed -cv -ignore_vi",
+    "build_command": "conda create -y -p .conda-env python=3.10 && conda activate ./.conda-env && conda install -y -c conda-forge scikit-learn numpy matplotlib pandas jsonpickle nearpy treeinterpreter cleanlab",
+    "run_command": "python train.py -f csvs/lrm_features.csv -l csvs/lrm_metrics.csv -a rf -m rhat_min -suf avg -bw -plt -saveas plots/results_rhat_min_lrm.png -keep _ast_ dt_ var_min var_max data_size -st -tname lightspeed -cv -ignore_vi",
+    "input_scale": "Official Zenodo csv dataset; class=lrm; model type=lightspeed; threshold sweep in -plt mode",
+    "success_criteria": "train exits 0, threshold/F1 logs present, plot artifact generated"
+  },
+  "environment": {
+    "os": "Linux",
+    "python": "conda environment with python3.10",
+    "methodology": "tutorial.md one-pass profiling; process-tree RSS peak via monitor_tree.sh (captures multithread/multiprocess peaks); build/run split; real execution."
+  },
+  "static_triage": {
+    "requires_gpu": false,
+    "likely_bottlenecks": ["RAM", "CPU", "Disk"],
+    "notes": "Scikit-learn random-forest training + cross-validation; no CUDA dependency in repo."
+  },
+  "peaks_observed": {
+    "build_peak_ram_gb": 1.2328,
+    "run_peak_ram_gb": 14.8356,
+    "peak_disk_gb": 2.0679,
+    "build_runtime_seconds": 48,
+    "run_runtime_seconds": 307,
+    "cpu_utilization_summary": "build: conda dependency solve/install; run: sklearn RF training + CV and threshold sweep"
+  },
+  "margins_used": "none",
+  "min_hardware": {
+    "build_min_spec": {"min_ram_gb": 2, "min_disk_gb": 4, "min_vcpu": 2},
+    "run_min_spec": {"min_ram_gb": 16, "min_disk_gb": 4, "min_vcpu": 2},
+    "summary": "2 vCPU / 16 GB RAM / 4 GB disk, no GPU. Raw process-tree peaks: build 1.2328 GB, run 14.8356 GB, disk 2.0679 GB."
+  }
+}

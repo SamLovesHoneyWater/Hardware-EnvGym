@@ -1,0 +1,12 @@
+=== [1/5] Clone 仓库 ===
+Cloning into '/home/cc/Label/serde-rs_serde_measure'...
+=== [2/5] Build 阶段：cargo build -p serde --features derive --tests --jobs 1 ===
+=== [3/5] Run 阶段：cargo test -p serde --features derive --jobs 1 -- --test-threads=1 ===
+=== [4/5] 汇总峰值 ===
+=== [5/5] 输出 JSON ===
+测量完成：/home/cc/Label/result/serde-rs_serde.json
+BUILD_PEAK_GB=0.2634
+RUN_PEAK_GB=0.1222
+DISK_GB=0.1247
+BUILD_RUNTIME_S=12
+RUN_RUNTIME_S=1

@@ -1,0 +1,36 @@
+{
+  "name": "vuejs_core",
+  "url": "https://github.com/vuejs/core",
+  "mvw": {
+    "mvw_command": "pnpm install --frozen-lockfile && pnpm test runtime-core --run",
+    "build_command": "pnpm install --frozen-lockfile",
+    "run_command": "pnpm test runtime-core --run",
+    "input_scale": "Monorepo full dependency install + runtime-core related vitest cases (single run, non-watch)",
+    "success_criteria": "exit code 0, vitest completes with passing tests"
+  },
+  "environment": {
+    "os": "Linux (CentOS 7)",
+    "node": "v20.20.0",
+    "pnpm": "10.13.1",
+    "methodology": "tutorial.md one-pass profiling; process-group/tree RSS sampled every 0.5s by monitor_tree.sh; peaks include child processes/threads; MVW actually executed."
+  },
+  "static_triage": {
+    "requires_gpu": false,
+    "likely_bottlenecks": ["RAM", "CPU", "Disk"],
+    "notes": "TypeScript/JavaScript monorepo using pnpm + vitest; no explicit GPU dependency."
+  },
+  "peaks_observed": {
+    "build_peak_ram_gb": 1.3253,
+    "run_peak_ram_gb": 1.8915,
+    "peak_disk_gb": 0.3270,
+    "build_runtime_seconds": 29.36,
+    "run_runtime_seconds": 7.61,
+    "cpu_utilization_summary": "build and test phases are CPU-intensive with worker processes; RAM peak measured on full process group"
+  },
+  "margins_used": "none",
+  "min_hardware": {
+    "build_min_spec": { "min_ram_gb": 2, "min_disk_gb": 1, "min_vcpu": 2 },
+    "run_min_spec": { "min_ram_gb": 2, "min_disk_gb": 1, "min_vcpu": 2 },
+    "summary": "2 vCPU / 2 GB RAM / 1 GB disk, no GPU. Raw process-tree peaks: build 1.3253 GB, run 1.8915 GB, disk 0.3270 GB."
+  }
+}

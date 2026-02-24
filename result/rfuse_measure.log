@@ -1,0 +1,41 @@
+=== [1/5] clone rfuse ===
+Cloning into '/home/cc/Label/rfuse_measure/rfuse'...
+Checking out files:  20% (15535/74166)   Checking out files:  21% (15575/74166)   Checking out files:  22% (16317/74166)   Checking out files:  23% (17059/74166)   Checking out files:  24% (17800/74166)   Checking out files:  25% (18542/74166)   Checking out files:  26% (19284/74166)   Checking out files:  27% (20025/74166)   Checking out files:  28% (20767/74166)   Checking out files:  29% (21509/74166)   Checking out files:  30% (22250/74166)   Checking out files:  31% (22992/74166)   Checking out files:  32% (23734/74166)   Checking out files:  33% (24475/74166)   Checking out files:  34% (25217/74166)   Checking out files:  35% (25959/74166)   Checking out files:  36% (26700/74166)   Checking out files:  37% (27442/74166)   Checking out files:  38% (28184/74166)   Checking out files:  39% (28925/74166)   Checking out files:  39% (29067/74166)   Checking out files:  40% (29667/74166)   Checking out files:  40% (30268/74166)   Checking out files:  41% (30409/74166)   Checking out files:  42% (31150/74166)   Checking out files:  43% (31892/74166)   Checking out files:  44% (32634/74166)   Checking out files:  45% (33375/74166)   Checking out files:  46% (34117/74166)   Checking out files:  47% (34859/74166)   Checking out files:  47% (34870/74166)   Checking out files:  48% (35600/74166)   Checking out files:  49% (36342/74166)   Checking out files:  50% (37083/74166)   Checking out files:  51% (37825/74166)   Checking out files:  52% (38567/74166)   Checking out files:  53% (39308/74166)   Checking out files:  54% (40050/74166)   Checking out files:  55% (40792/74166)   Checking out files:  56% (41533/74166)   Checking out files:  57% (42275/74166)   Checking out files:  58% (43017/74166)   Checking out files:  59% (43758/74166)   Checking out files:  59% (44442/74166)   Checking out files:  60% (44500/74166)   Checking out files:  61% (45242/74166)   Checking out files:  62% (45983/74166)   Checking out files:  63% (46725/74166)   Checking out files:  64% (47467/74166)   Checking out files:  65% (48208/74166)   Checking out files:  66% (48950/74166)   Checking out files:  67% (49692/74166)   Checking out files:  68% (50433/74166)   Checking out files:  69% (51175/74166)   Checking out files:  70% (51917/74166)   Checking out files:  71% (52658/74166)   Checking out files:  72% (53400/74166)   Checking out files:  72% (53958/74166)   Checking out files:  73% (54142/74166)   Checking out files:  74% (54883/74166)   Checking out files:  75% (55625/74166)   Checking out files:  76% (56367/74166)   Checking out files:  77% (57108/74166)   Checking out files:  78% (57850/74166)   Checking out files:  79% (58592/74166)   Checking out files:  80% (59333/74166)   Checking out files:  81% (60075/74166)   Checking out files:  82% (60817/74166)   Checking out files:  83% (61558/74166)   Checking out files:  84% (62300/74166)   Checking out files:  85% (63042/74166)   Checking out files:  86% (63783/74166)   Checking out files:  87% (64525/74166)   Checking out files:  88% (65267/74166)   Checking out files:  88% (65681/74166)   Checking out files:  89% (66008/74166)   Checking out files:  90% (66750/74166)   Checking out files:  91% (67492/74166)   Checking out files:  92% (68233/74166)   Checking out files:  93% (68975/74166)   Checking out files:  94% (69717/74166)   Checking out files:  95% (70458/74166)   Checking out files:  96% (71200/74166)   Checking out files:  97% (71942/74166)   Checking out files:  97% (72315/74166)   Checking out files:  98% (72683/74166)   Checking out files:  99% (73425/74166)   Checking out files: 100% (74166/74166)   Checking out files: 100% (74166/74166), done.
+=== [2/5] static triage ===
+requires_gpu=false
+=== [3/5] build phase: meson+ninja ===
+=== [4/5] run phase: pytest test/ ===
+============================= test session starts ==============================
+platform linux -- Python 3.13.12, pytest-9.0.2, pluggy-1.6.0
+rootdir: /home/cc/Label/rfuse_measure/rfuse/lib/librfuse/test
+configfile: pytest.ini
+collected 45 items
+
+../test/test_ctests.py ssssssss                                          [ 17%]
+../test/test_examples.py sssssssssssssssssssssssssssssssssssss           [100%]
+
+=============================== warnings summary ===============================
+../test/conftest.py:17
+  /home/cc/Label/rfuse_measure/rfuse/lib/librfuse/test/conftest.py:17: PytestDeprecationWarning: The hookimpl pytest_pyfunc_call uses old-style configuration options (marks or attributes).
+  Please use the pytest.hookimpl(hookwrapper=True) decorator instead
+   to configure the hooks.
+   See https://docs.pytest.org/en/latest/deprecations.html#configuring-hook-specs-impls-using-markers
+    @pytest.mark.hookwrapper
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [2] ../test/test_ctests.py:21: not supported by running kernel
+SKIPPED [4] ../test/test_ctests.py:42: not supported by running kernel
+SKIPPED [2] ../test/test_ctests.py:73: not supported by running kernel
+SKIPPED [1] ../test/util.py: Can't find fusermount executable
+SKIPPED [12] ../test/test_examples.py:86: Can't find fusermount executable
+SKIPPED [16] ../test/test_examples.py:113: Can't find fusermount executable
+SKIPPED [2] ../test/test_examples.py:191: Can't find fusermount executable
+SKIPPED [1] ../test/test_examples.py:258: not supported by running kernel
+SKIPPED [2] ../test/test_examples.py: Can't find fusermount executable
+SKIPPED [2] ../test/test_examples.py:332: not supported by running kernel
+SKIPPED [1] ../test/test_examples.py:368: needs to run as root
+======================== 45 skipped, 1 warning in 0.23s ========================
+=== [5/5] write result/rfuse.json ===
+Done: /home/cc/Label/result/rfuse.json
+=== cleanup ===

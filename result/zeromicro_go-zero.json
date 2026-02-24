@@ -1,0 +1,43 @@
+{
+  "name": "zeromicro_go-zero",
+  "url": "https://github.com/zeromicro/go-zero",
+  "mvw": {
+    "mvw_command": "go build ./... && go test -short ./core/...",
+    "build_command": "go build ./...",
+    "run_command": "go test -short ./core/...",
+    "input_scale": "full repository build plus short tests on core packages",
+    "success_criteria": "both commands exit code 0"
+  },
+  "environment": {
+    "os": "Linux",
+    "go_version": "go version go1.26.0 linux/amd64",
+    "methodology": "tutorial.md one-pass profiling; process-group tree peak monitoring for RAM/CPU/threads and disk (repo + go build cache + module cache); workload actually executed."
+  },
+  "static_triage": {
+    "requires_gpu": false,
+    "likely_bottlenecks": ["RAM", "CPU", "Disk"],
+    "notes": "Go microservice framework; no GPU dependency found; build and tests are parallelized by Go toolchain."
+  },
+  "peaks_observed": {
+    "build_peak_ram_gb": 1.9193,
+    "run_peak_ram_gb": 3.0135,
+    "peak_disk_gb": 1.5737,
+    "build_runtime_seconds": 45,
+    "run_runtime_seconds": 55,
+    "cpu_utilization_summary": "build and run are CPU-intensive due to Go parallel compilation/testing; multi-threaded workload observed"
+  },
+  "margins_used": "none",
+  "min_hardware": {
+    "build_min_spec": {
+      "min_ram_gb": 2,
+      "min_disk_gb": 2,
+      "min_vcpu": 2
+    },
+    "run_min_spec": {
+      "min_ram_gb": 4,
+      "min_disk_gb": 2,
+      "min_vcpu": 2
+    },
+    "summary": "2 vCPU / 4 GB RAM / 2 GB disk, no GPU. Raw peaks: build RAM 1.9193 GB, run RAM 3.0135 GB, disk 1.5737 GB."
+  }
+}

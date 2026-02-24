@@ -1,0 +1,12 @@
+=== [1/5] Clone 仓库 ===
+Cloning into '/home/cc/Label/tokio-rs_bytes_measure'...
+=== [2/5] Build 阶段：cargo build --tests --jobs 1 ===
+=== [3/5] Run 阶段：cargo test --jobs 1 -- --test-threads=1 ===
+=== [4/5] 汇总峰值 ===
+=== [5/5] 输出 JSON ===
+测量完成：/home/cc/Label/result/tokio-rs_bytes.json
+BUILD_PEAK_GB=0.2388
+RUN_PEAK_GB=0.1402
+DISK_GB=0.1822
+BUILD_RUNTIME_S=14
+RUN_RUNTIME_S=28

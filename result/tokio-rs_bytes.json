@@ -1,0 +1,43 @@
+{
+  "name": "tokio-rs_bytes",
+  "url": "https://github.com/tokio-rs/bytes",
+  "mvw": {
+    "mvw_command": "cargo build --tests --jobs 1 && cargo test --jobs 1 -- --test-threads=1",
+    "build_command": "cargo build --tests --jobs 1",
+    "run_command": "cargo test --jobs 1 -- --test-threads=1",
+    "input_scale": "bytes 仓库默认测试集，单 job 构建 + 单线程测试",
+    "success_criteria": "both commands exit code 0"
+  },
+  "environment": {
+    "os": "Linux",
+    "rust_toolchain": "rustc 1.93.1 (01f6ddf75 2026-02-11)",
+    "methodology": "tutorial.md one-pass profiling; process-tree RSS peak (monitor_tree.sh), whole tree not single process; MVW actually run; multi-thread/multi-process peak included."
+  },
+  "static_triage": {
+    "requires_gpu": false,
+    "likely_bottlenecks": ["RAM", "CPU", "Disk"],
+    "notes": "Rust bytes library; no GPU requirement; build/test mainly consume CPU, RAM, and disk."
+  },
+  "peaks_observed": {
+    "build_peak_ram_gb": 0.2388,
+    "run_peak_ram_gb": 0.1402,
+    "peak_disk_gb": 0.1822,
+    "build_runtime_seconds": 14,
+    "run_runtime_seconds": 28,
+    "cpu_utilization_summary": "build moderate-high (cargo compile), run moderate (unit/doc/integration tests)"
+  },
+  "margins_used": "none",
+  "min_hardware": {
+    "build_min_spec": {
+      "min_ram_gb": 2,
+      "min_disk_gb": 1,
+      "min_vcpu": 2
+    },
+    "run_min_spec": {
+      "min_ram_gb": 2,
+      "min_disk_gb": 1,
+      "min_vcpu": 2
+    },
+    "summary": "2 vCPU / 2 GB RAM / 1 GB disk, no GPU. Raw process-tree peaks: build 0.2388 GB, run 0.1402 GB, disk 0.1822 GB."
+  }
+}

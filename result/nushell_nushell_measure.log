@@ -1,0 +1,574 @@
+=== [1/5] Clone 仓库 ===
+Cloning into '/home/cc/Label/nushell_nushell_measure'...
+=== [2/5] Build 阶段：cargo build --release --bin nu ===
+   Compiling proc-macro2 v1.0.106
+   Compiling quote v1.0.44
+   Compiling unicode-ident v1.0.22
+   Compiling libc v0.2.178
+   Compiling cfg-if v1.0.4
+   Compiling serde_core v1.0.228
+   Compiling memchr v2.7.6
+   Compiling autocfg v1.5.0
+   Compiling serde v1.0.228
+   Compiling log v0.4.29
+   Compiling itoa v1.0.17
+   Compiling smallvec v1.15.1
+   Compiling thiserror v2.0.18
+   Compiling once_cell v1.21.3
+   Compiling equivalent v1.0.2
+   Compiling foldhash v0.2.0
+   Compiling allocator-api2 v0.2.21
+   Compiling stable_deref_trait v1.2.1
+   Compiling either v1.15.0
+   Compiling cfg_aliases v0.2.1
+   Compiling simd-adler32 v0.3.7
+   Compiling adler2 v2.0.0
+   Compiling rustix v0.38.42
+   Compiling zmij v1.0.19
+   Compiling rustix v1.1.3
+   Compiling rustversion v1.0.22
+   Compiling linux-raw-sys v0.4.14
+   Compiling linux-raw-sys v0.11.0
+   Compiling iana-time-zone v0.1.65
+   Compiling pure-rust-locales v0.8.2
+   Compiling scopeguard v1.2.0
+   Compiling parking_lot_core v0.9.12
+   Compiling zlib-rs v0.5.1
+   Compiling bytes v1.11.1
+   Compiling procfs v0.18.0
+   Compiling ryu v1.0.22
+   Compiling heck v0.5.0
+   Compiling thiserror v1.0.69
+   Compiling serde_json v1.0.149
+   Compiling rustc-hash v2.1.0
+   Compiling utf8parse v0.2.2
+   Compiling arrayvec v0.7.6
+   Compiling same-file v1.0.6
+   Compiling unicode-width v0.1.11
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling anstyle-query v1.1.5
+   Compiling colorchoice v1.0.4
+   Compiling crc32fast v1.4.2
+   Compiling nix v0.30.1
+   Compiling libm v0.2.16
+   Compiling anstyle v1.0.13
+   Compiling strsim v0.11.1
+   Compiling miniz_oxide v0.8.9
+   Compiling lock_api v0.4.14
+   Compiling ref-cast v1.0.25
+   Compiling signal-hook v0.3.17
+   Compiling type-map v0.5.1
+   Compiling anstyle-parse v0.2.7
+   Compiling walkdir v2.5.0
+   Compiling self_cell v1.2.0
+   Compiling itertools v0.14.0
+   Compiling hex v0.4.3
+   Compiling clap_lex v0.7.4
+   Compiling typeid v1.0.2
+   Compiling unicode-segmentation v1.12.0
+   Compiling byteorder v1.5.0
+   Compiling regex-syntax v0.8.9
+   Compiling uucore v0.6.0
+   Compiling os_display v0.1.3
+   Compiling glob v0.3.1
+   Compiling litrs v0.4.1
+   Compiling owo-colors v4.1.0
+   Compiling dunce v1.0.5
+   Compiling nu-ansi-term v0.50.3
+   Compiling bit-vec v0.8.0
+   Compiling hashbrown v0.16.1
+   Compiling unicase v2.9.0
+   Compiling gimli v0.31.1
+   Compiling num-format v0.4.4
+   Compiling option-ext v0.2.0
+   Compiling anstream v0.6.21
+   Compiling sys-locale v0.3.2
+   Compiling rustc-demangle v0.1.24
+   Compiling pin-project-lite v0.2.16
+   Compiling alloc-no-stdlib v2.0.4
+   Compiling unicode-linebreak v0.1.5
+   Compiling unicode-width v0.2.2
+   Compiling is_ci v1.2.0
+   Compiling inventory v0.3.15
+   Compiling supports-unicode v3.0.0
+   Compiling num-traits v0.2.19
+   Compiling bigdecimal v0.4.10
+   Compiling aho-corasick v1.1.4
+   Compiling vte v0.14.1
+   Compiling object v0.36.5
+   Compiling supports-color v3.0.2
+   Compiling supports-hyperlinks v3.1.0
+   Compiling bit-set v0.8.0
+   Compiling alloc-stdlib v0.2.2
+   Compiling futures-core v0.3.31
+   Compiling web-time v1.1.0
+   Compiling zerocopy v0.7.35
+   Compiling nu-glob v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-glob)
+   Compiling find-msvc-tools v0.1.9
+   Compiling shlex v1.3.0
+   Compiling brotli-decompressor v5.0.0
+   Compiling strip-ansi-escapes v0.2.1
+   Compiling futures-sink v0.3.31
+   Compiling convert_case v0.7.1
+   Compiling ident_case v1.0.1
+   Compiling http v1.4.0
+   Compiling textwrap v0.16.1
+   Compiling bitflags v2.10.0
+   Compiling semver v1.0.27
+   Compiling version_check v0.9.5
+   Compiling doctest-file v1.0.0
+   Compiling typenum v1.19.0
+   Compiling slab v0.4.12
+   Compiling cc v1.2.55
+   Compiling getrandom v0.3.4
+   Compiling futures-channel v0.3.31
+   Compiling indexmap v2.13.0
+   Compiling castaway v0.2.3
+   Compiling document-features v0.2.11
+   Compiling lru v0.16.3
+   Compiling num-conv v0.2.0
+   Compiling time-core v0.1.8
+   Compiling pin-utils v0.1.0
+   Compiling httparse v1.10.1
+   Compiling syn v2.0.114
+   Compiling zeroize v1.8.2
+   Compiling fnv v1.0.7
+   Compiling crossbeam-utils v0.8.21
+   Compiling lscolors v0.20.0
+   Compiling percent-encoding v2.3.2
+   Compiling uucore_procs v0.6.0
+   Compiling proc-macro-error-attr2 v2.0.0
+   Compiling futures-io v0.3.31
+   Compiling bytemuck v1.25.0
+   Compiling unicode-xid v0.2.6
+   Compiling futures-task v0.3.31
+   Compiling minimal-lexical v0.2.1
+   Compiling generic-array v0.14.7
+   Compiling tracing-core v0.1.36
+   Compiling rustls-pki-types v1.14.0
+   Compiling errno v0.3.10
+   Compiling mio v1.0.4
+   Compiling dirs-sys v0.5.0
+   Compiling sysinfo v0.38.0
+   Compiling os_pipe v1.2.1
+   Compiling socket2 v0.6.2
+   Compiling interprocess v2.3.1
+   Compiling const_format_proc_macros v0.2.34
+   Compiling bytesize v2.3.1
+   Compiling signal-hook-registry v1.4.8
+   Compiling zerocopy v0.8.34
+   Compiling nom v7.1.3
+   Compiling buf-trait v0.4.1
+   Compiling dirs v6.0.0
+   Compiling parking_lot v0.12.5
+   Compiling litemap v0.8.1
+   Compiling siphasher v1.0.1
+   Compiling mime v0.3.17
+   Compiling indoc v2.0.7
+   Compiling byteyarn v0.5.1
+   Compiling rand_core v0.6.4
+   Compiling libz-rs-sys v0.5.1
+   Compiling regex-automata v0.4.14
+   Compiling writeable v0.6.2
+   Compiling flate2 v1.1.2
+   Compiling phf_shared v0.11.3
+   Compiling brotli v8.0.2
+   Compiling rand v0.8.5
+   Compiling num-integer v0.1.46
+   Compiling signal-hook-mio v0.2.4
+   Compiling rmp v0.8.15
+   Compiling getrandom v0.2.17
+   Compiling form_urlencoded v1.2.2
+   Compiling encoding_rs v0.8.35
+   Compiling getrandom v0.4.1
+   Compiling untrusted v0.9.0
+   Compiling ucd-trie v0.1.7
+   Compiling home v0.5.9
+   Compiling bitflags v1.3.2
+   Compiling static_assertions v1.1.0
+   Compiling icu_normalizer_data v2.1.1
+   Compiling powerfmt v0.2.0
+   Compiling num-bigint v0.4.6
+   Compiling icu_properties_data v2.1.2
+   Compiling compact_str v0.9.0
+   Compiling http-body v1.0.1
+   Compiling pest v2.8.5
+   Compiling rand_core v0.9.3
+   Compiling addr2line v0.24.2
+   Compiling unicode-truncate v2.0.1
+   Compiling time-macros v0.2.27
+   Compiling portable-atomic v1.13.1
+   Compiling vcpkg v0.2.15
+   Compiling deranged v0.5.5
+   Compiling pkg-config v0.3.31
+   Compiling fastrand v2.3.0
+   Compiling base64 v0.22.1
+   Compiling num_threads v0.1.7
+   Compiling phf_generator v0.11.3
+   Compiling rustls v0.23.28
+   Compiling lazy_static v1.5.0
+   Compiling syn v1.0.109
+   Compiling phf_codegen v0.11.2
+   Compiling ring v0.17.14
+   Compiling atomic v0.6.1
+   Compiling filetime v0.2.25
+   Compiling openssl-probe v0.2.1
+   Compiling winnow v0.7.13
+   Compiling terminal_size v0.4.1
+   Compiling foldhash v0.1.5
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling subtle v2.6.1
+   Compiling clap_builder v4.5.23
+   Compiling sha1_smol v1.0.1
+   Compiling bytecount v0.6.8
+   Compiling digest v0.10.7
+   Compiling hashbrown v0.15.5
+   Compiling rustls-native-certs v0.8.3
+   Compiling libsqlite3-sys v0.35.0
+   Compiling line-clipping v0.3.5
+   Compiling md-5 v0.10.6
+   Compiling const_format v0.2.34
+   Compiling crossbeam-epoch v0.9.18
+   Compiling crossbeam-channel v0.5.15
+   Compiling webpki-roots v1.0.0
+   Compiling uuid v1.21.0
+   Compiling console v0.16.1
+   Compiling inotify-sys v0.1.5
+   Compiling thread_local v1.1.8
+   Compiling bumpalo v3.19.1
+   Compiling tz-rs v0.7.0
+   Compiling unit-prefix v0.5.1
+   Compiling lockfree-object-pool v0.1.6
+   Compiling v_htmlescape v0.15.8
+   Compiling atomic-waker v1.1.2
+   Compiling ansitok v0.3.0
+   Compiling tower-service v0.3.3
+   Compiling rayon-core v1.13.0
+   Compiling rust_decimal v1.36.0
+   Compiling hashlink v0.10.0
+   Compiling indicatif v0.18.0
+   Compiling pest_meta v2.8.5
+   Compiling zopfli v0.8.1
+   Compiling tzdb_data v0.2.1
+   Compiling time v0.3.47
+   Compiling crossbeam-deque v0.8.6
+   Compiling inotify v0.9.6
+   Compiling webpki-roots v0.26.11
+   Compiling phf v0.11.3
+   Compiling ureq-proto v0.4.2
+   Compiling http-body-util v0.1.3
+   Compiling ansi-str v0.9.0
+   Compiling pxfm v0.1.27
+   Compiling rustls-pemfile v2.2.0
+   Compiling mime_guess v2.0.5
+   Compiling mio v0.8.11
+   Compiling socks v0.3.4
+   Compiling nu-pretty-hex v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-pretty-hex)
+   Compiling is-docker v0.2.0
+   Compiling fdeflate v0.3.7
+   Compiling tower-layer v0.3.3
+   Compiling fallible-iterator v0.3.0
+   Compiling papergrid v0.17.0
+   Compiling sync_wrapper v1.0.2
+   Compiling fallible-streaming-iterator v0.1.9
+   Compiling utf-8 v0.7.6
+   Compiling utf8_iter v1.0.4
+   Compiling jiff v0.2.18
+   Compiling httpdate v1.0.3
+   Compiling backtrace v0.3.74
+   Compiling png v0.18.0
+   Compiling notify v6.1.1
+   Compiling is-wsl v0.4.0
+   Compiling zip v4.6.1
+   Compiling fancy-regex v0.17.0
+   Compiling backtrace-ext v0.2.1
+   Compiling ppv-lite86 v0.2.21
+   Compiling clap v4.5.23
+   Compiling tabled v0.20.0
+   Compiling regex v1.12.3
+   Compiling tzdb v0.7.2
+   Compiling moxcms v0.7.11
+   Compiling toml_parser v1.0.6+spec-1.1.0
+   Compiling synstructure v0.13.2
+   Compiling xattr v1.3.1
+   Compiling proc-macro-error2 v2.0.1
+   Compiling darling_core v0.20.10
+   Compiling rand_chacha v0.9.0
+   Compiling tempfile v3.24.0
+   Compiling pest_generator v2.8.5
+   Compiling darling_core v0.23.0
+   Compiling serde_derive_internals v0.29.1
+   Compiling fd-lock v4.0.2
+   Compiling rand v0.9.0
+   Compiling parse-zoneinfo v0.3.1
+   Compiling pori v0.0.0
+   Compiling quick-xml v0.38.4
+   Compiling codepage v0.1.2
+   Compiling toml_datetime v0.7.5+spec-1.1.0
+   Compiling serde_spanned v1.0.4
+   Compiling etcetera v0.10.0
+   Compiling platform-info v2.0.4
+   Compiling csv-core v0.1.11
+   Compiling itertools v0.11.0
+   Compiling itertools v0.13.0
+   Compiling strum v0.27.2
+   Compiling atoi_simd v0.16.0
+   Compiling is_debug v1.1.0
+   Compiling file-id v0.2.2
+   Compiling fast-float2 v0.2.3
+   Compiling chrono-tz-build v0.4.0
+   Compiling fs_extra v1.3.0
+   Compiling strum v0.26.3
+   Compiling urlencoding v2.1.3
+   Compiling byteorder-lite v0.1.0
+   Compiling cpufeatures v0.2.17
+   Compiling pathdiff v0.2.3
+   Compiling unsafe-libyaml v0.2.11
+   Compiling x11rb-protocol v0.13.1
+   Compiling toml_writer v1.0.6+spec-1.1.0
+   Compiling env_home v0.1.0
+   Compiling sha2 v0.10.9
+   Compiling csv v1.4.0
+   Compiling open v5.3.1
+   Compiling notify-debouncer-full v0.3.2
+   Compiling which v8.0.0
+   Compiling which v4.4.2
+   Compiling rayon v1.11.0
+   Compiling oem_cp v2.1.2
+   Compiling fuzzy-matcher v0.3.7
+   Compiling chardetng v0.1.17
+   Compiling devicons v0.6.12
+   Compiling serde_path_to_error v0.1.20
+   Compiling toml v0.9.10+spec-1.1.0
+   Compiling fluent-uri v0.1.4
+   Compiling dns-lookup v3.0.1
+   Compiling print-positions v0.6.1
+   Compiling quick-xml v0.39.0
+   Compiling data-encoding v2.10.0
+   Compiling rmcp v0.14.0
+   Compiling filesize v0.2.0
+   Compiling roxmltree v0.20.0
+   Compiling alphanumeric-sort v1.5.3
+   Compiling anyhow v1.0.100
+   Compiling matchit v0.8.4
+   Compiling dyn-clone v1.0.20
+   Compiling bracoxide v0.1.8
+   Compiling shadow-rs v1.7.0
+   Compiling edit v0.1.5
+   Compiling matchers v0.2.0
+   Compiling sharded-slab v0.1.7
+   Compiling tracing-log v0.2.0
+   Compiling nucleo-matcher v0.3.1
+   Compiling edtui-jagged v0.1.13
+   Compiling pastey v0.2.1
+   Compiling is_executable v1.0.4
+   Compiling nu v0.110.1 (/home/cc/Label/nushell_nushell_measure)
+   Compiling termcolor v1.4.1
+   Compiling ctrlc v3.5.1
+   Compiling lexopt v0.3.1
+   Compiling pest_consume_macros v1.1.0
+   Compiling serde_derive v1.0.228
+   Compiling displaydoc v0.2.5
+   Compiling thiserror-impl v2.0.18
+   Compiling zerofrom-derive v0.1.6
+   Compiling yoke-derive v0.8.1
+   Compiling zerovec-derive v0.11.2
+   Compiling thiserror-impl v1.0.69
+   Compiling strum_macros v0.27.2
+   Compiling ref-cast-impl v1.0.25
+   Compiling derive_more-impl v2.0.1
+   Compiling typetag-impl v0.2.18
+   Compiling miette-derive v7.6.0
+   Compiling nu-derive-value v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-derive-value)
+   Compiling futures-macro v0.3.31
+   Compiling tokio-macros v2.6.0
+   Compiling tracing-attributes v0.1.31
+   Compiling darling_macro v0.20.10
+   Compiling chrono-tz v0.10.0
+   Compiling pest_derive v2.8.5
+   Compiling darling_macro v0.23.0
+   Compiling parse_datetime v0.13.2
+   Compiling tinystr v0.8.1
+   Compiling strum_macros v0.26.4
+   Compiling schemars_derive v1.2.1
+   Compiling serde_repr v0.1.19
+   Compiling nu-cmd-lang v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-cmd-lang)
+   Compiling unic-langid-impl v0.9.6
+   Compiling darling v0.20.10
+   Compiling pest_consume v1.1.3
+   Compiling async-trait v0.1.89
+   Compiling darling v0.23.0
+   Compiling instability v0.3.7
+   Compiling tokio v1.49.0
+   Compiling enum_dispatch v0.3.13
+   Compiling derive_more v2.0.1
+   Compiling rmcp-macros v0.14.0
+   Compiling simplelog v0.12.2
+   Compiling unic-langid v0.9.6
+   Compiling intl-memoizer v0.5.3
+   Compiling intl_pluralrules v7.0.2
+   Compiling futures-util v0.3.31
+   Compiling fluent-langneg v0.13.0
+   Compiling zerofrom v0.1.6
+   Compiling fluent-syntax v0.12.0
+   Compiling nu-experimental v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-experimental)
+   Compiling pwd v1.4.0
+   Compiling kasuari v0.4.8
+   Compiling yoke v0.8.1
+   Compiling miette v7.6.0
+   Compiling nu-path v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-path)
+   Compiling wax v0.6.0
+   Compiling tracing v0.1.44
+   Compiling umask v2.1.0
+   Compiling zerovec v0.11.4
+   Compiling zerotrie v0.2.3
+   Compiling fluent-bundle v0.16.0
+   Compiling axum-core v0.5.6
+   Compiling tracing-subscriber v0.3.22
+   Compiling rustls-webpki v0.103.9
+   Compiling fluent v0.17.0
+   Compiling ratatui-core v0.1.0
+   Compiling titlecase v3.6.0
+   Compiling image v0.25.9
+   Compiling potential_utf v0.1.4
+   Compiling icu_collections v2.1.1
+   Compiling x11rb v0.13.1
+   Compiling icu_locale_core v2.1.1
+   Compiling chrono v0.4.43
+   Compiling lean_string v0.5.0
+   Compiling erased-serde v0.4.5
+   Compiling crossterm v0.29.0
+   Compiling rmp-serde v1.3.1
+   Compiling linked-hash-map v0.5.6
+   Compiling serde_urlencoded v0.7.1
+   Compiling serde_yaml v0.9.34+deprecated
+   Compiling lsp-types v0.97.0
+   Compiling lsp-server v0.7.9
+   Compiling ratatui-widgets v0.3.0
+   Compiling nu-utils v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-utils)
+   Compiling typetag v0.2.18
+   Compiling icu_provider v2.1.1
+   Compiling icu_normalizer v2.1.1
+   Compiling icu_properties v2.1.2
+   Compiling multipart-rs v0.1.13
+   Compiling futures-executor v0.3.31
+   Compiling sse-stream v0.2.1
+   Compiling futures v0.3.31
+   Compiling ratatui-crossterm v0.1.0
+   Compiling procfs-core v0.18.0
+   Compiling chrono-humanize v0.2.3
+   Compiling ratatui-macros v0.7.0
+   Compiling tui-tree-widget v0.24.0
+   Compiling ratatui v0.30.0
+   Compiling nu-json v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-json)
+   Compiling nu-term-grid v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-term-grid)
+   Compiling dtparse v2.0.1
+   Compiling trash v5.2.1
+   Compiling calamine v0.32.0
+   Compiling human-date-parser v0.3.1
+   Compiling schemars v1.2.1
+   Compiling arboard v3.4.1
+   Compiling idna_adapter v1.2.1
+   Compiling idna v1.1.0
+   Compiling edtui v0.11.1
+   Compiling url v2.5.8
+   Compiling tokio-util v0.7.18
+   Compiling tower v0.5.3
+   Compiling tokio-stream v0.1.17
+   Compiling h2 v0.4.13
+   Compiling nu-system v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-system)
+   Compiling nu-protocol v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-protocol)
+   Compiling rustls-platform-verifier v0.5.3
+   Compiling ureq v3.0.12
+   Compiling uu_whoami v0.6.0
+   Compiling uu_mv v0.6.0
+   Compiling uu_mktemp v0.6.0
+   Compiling uu_uname v0.6.0
+   Compiling uu_mkdir v0.6.0
+   Compiling uu_cp v0.6.0
+   Compiling uu_touch v0.6.0
+   Compiling update-informer v1.3.0
+   Compiling hyper v1.8.1
+   Compiling hyper-util v0.1.20
+   Compiling axum v0.8.8
+   Compiling lsp-textdocument v0.5.0
+   Compiling nu-engine v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-engine)
+   Compiling nu-plugin-protocol v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-plugin-protocol)
+   Compiling nu-cmd-extra v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-cmd-extra)
+   Compiling nu-plugin-core v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-plugin-core)
+   Compiling nu-color-config v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-color-config)
+   Compiling nu-plugin-engine v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-plugin-engine)
+   Compiling nu-table v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-table)
+   Compiling nu-parser v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-parser)
+   Compiling nu-cmd-plugin v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-cmd-plugin)
+   Compiling nu-cmd-base v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-cmd-base)
+   Compiling nuon v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nuon)
+   Compiling nu-std v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-std)
+   Compiling nu-explore v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-explore)
+   Compiling nu-mcp v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-mcp)
+   Compiling rusqlite v0.37.0
+   Compiling reedline v0.45.0 (https://github.com/nushell/reedline?branch=main#cefb6112)
+   Compiling nu-command v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-command)
+   Compiling nu-cli v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-cli)
+   Compiling nu-lsp v0.110.1 (/home/cc/Label/nushell_nushell_measure/crates/nu-lsp)
+    Finished `release` profile [optimized] target(s) in 1m 54s
+=== [3/5] Run 阶段：nu 数据处理工作流（重复 50 次） ===
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+=== [4/5] 汇总峰值 ===
+=== [5/5] 输出 JSON ===
+测量完成：/home/cc/Label/result/nushell_nushell.json
+BUILD_PEAK_GB=9.0417
+RUN_PEAK_GB=0.0072
+DISK_GB=1.5354
+BUILD_RUNTIME_S=116
+RUN_RUNTIME_S=1

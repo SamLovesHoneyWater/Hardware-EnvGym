@@ -1,0 +1,379 @@
+Cloning into '/home/cc/Label/simdjson_measure2'...
+-- The CXX compiler identification is GNU 14.3.0
+-- The C compiler identification is GNU 14.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/cc/miniforge3/bin/x86_64-conda-linux-gnu-c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/cc/miniforge3/bin/x86_64-conda-linux-gnu-cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Looking for fork
+-- Looking for fork - found
+-- Looking for wait
+-- Looking for wait - found
+-- Adding -Og to compile flag
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE  
+-- CPM: Adding package google_benchmarks@1.9.4 (1.9.4)
+-- Failed to find LLVM FileCheck
+-- Found Git: /usr/bin/git (found version "1.8.3.1") 
+-- Google Benchmark version: v4.3.0, normalized to 4.3.0
+-- Looking for shm_open in rt
+-- Looking for shm_open in rt - found
+-- Performing Test HAVE_CXX_FLAG_WALL
+-- Performing Test HAVE_CXX_FLAG_WALL - Success
+-- Performing Test HAVE_CXX_FLAG_WEXTRA
+-- Performing Test HAVE_CXX_FLAG_WEXTRA - Success
+-- Performing Test HAVE_CXX_FLAG_WSHADOW
+-- Performing Test HAVE_CXX_FLAG_WSHADOW - Success
+-- Performing Test HAVE_CXX_FLAG_WFLOAT_EQUAL
+-- Performing Test HAVE_CXX_FLAG_WFLOAT_EQUAL - Success
+-- Performing Test HAVE_CXX_FLAG_WOLD_STYLE_CAST
+-- Performing Test HAVE_CXX_FLAG_WOLD_STYLE_CAST - Success
+-- Performing Test HAVE_CXX_FLAG_WCONVERSION
+-- Performing Test HAVE_CXX_FLAG_WCONVERSION - Success
+-- Performing Test HAVE_CXX_FLAG_WSUGGEST_OVERRIDE
+-- Performing Test HAVE_CXX_FLAG_WSUGGEST_OVERRIDE - Success
+-- Performing Test HAVE_CXX_FLAG_PEDANTIC
+-- Performing Test HAVE_CXX_FLAG_PEDANTIC - Success
+-- Performing Test HAVE_CXX_FLAG_PEDANTIC_ERRORS
+-- Performing Test HAVE_CXX_FLAG_PEDANTIC_ERRORS - Success
+-- Performing Test HAVE_CXX_FLAG_WSHORTEN_64_TO_32
+-- Performing Test HAVE_CXX_FLAG_WSHORTEN_64_TO_32 - Failed
+-- Performing Test HAVE_CXX_FLAG_FSTRICT_ALIASING
+-- Performing Test HAVE_CXX_FLAG_FSTRICT_ALIASING - Success
+-- Performing Test HAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS
+-- Performing Test HAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS - Success
+-- Performing Test HAVE_CXX_FLAG_WSTRICT_ALIASING
+-- Performing Test HAVE_CXX_FLAG_WSTRICT_ALIASING - Success
+-- Performing Test HAVE_CXX_FLAG_WD654
+-- Performing Test HAVE_CXX_FLAG_WD654 - Failed
+-- Performing Test HAVE_CXX_FLAG_WTHREAD_SAFETY
+-- Performing Test HAVE_CXX_FLAG_WTHREAD_SAFETY - Failed
+-- Performing Test HAVE_CXX_FLAG_COVERAGE
+-- Performing Test HAVE_CXX_FLAG_COVERAGE - Success
+-- Compiling and running to test HAVE_STD_REGEX
+-- Performing Test HAVE_STD_REGEX -- success
+-- Compiling and running to test HAVE_GNU_POSIX_REGEX
+-- Performing Test HAVE_GNU_POSIX_REGEX -- failed to compile
+-- Compiling and running to test HAVE_POSIX_REGEX
+-- Performing Test HAVE_POSIX_REGEX -- success
+-- Compiling and running to test HAVE_STEADY_CLOCK
+-- Performing Test HAVE_STEADY_CLOCK -- success
+-- Compiling and running to test HAVE_PTHREAD_AFFINITY
+-- Performing Test HAVE_PTHREAD_AFFINITY -- failed to compile
+-- CPM: Adding package simdjson-data@ ()
+-- Performing Test SIMDJSON_FOUND_STRING_VIEW
+-- Performing Test SIMDJSON_FOUND_STRING_VIEW - Success
+-- CPM: Adding package cjson@ ()
+-- Populating cjson
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/cc/Label/simdjson_measure2/build/_deps/cjson-subbuild
+[ 11%] Creating directories for 'cjson-populate'
+[ 22%] Performing download step (download, verify and extract) for 'cjson-populate'
+-- Downloading...
+   dst='/home/cc/Label/simdjson_measure2/build/_deps/cjson-subbuild/cjson-populate-prefix/src/c69134d01746dcf551dd7724b4edb12f922eb0d1.zip'
+   timeout='none'
+   inactivity timeout='none'
+-- Using src='https://github.com/DaveGamble/cJSON/archive/c69134d01746dcf551dd7724b4edb12f922eb0d1.zip'
+-- [download 3% complete]
+-- [download 9% complete]
+-- [download 20% complete]
+-- [download 43% complete]
+-- [download 44% complete]
+-- [download 90% complete]
+-- [download 92% complete]
+-- [download 100% complete]
+-- Downloading... done
+-- extracting...
+     src='/home/cc/Label/simdjson_measure2/build/_deps/cjson-subbuild/cjson-populate-prefix/src/c69134d01746dcf551dd7724b4edb12f922eb0d1.zip'
+     dst='/home/cc/Label/simdjson_measure2/build/_deps/cjson-src'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[ 33%] No update step for 'cjson-populate'
+[ 44%] No patch step for 'cjson-populate'
+[ 55%] No configure step for 'cjson-populate'
+[ 66%] No build step for 'cjson-populate'
+[ 77%] No install step for 'cjson-populate'
+[ 88%] No test step for 'cjson-populate'
+[100%] Completed 'cjson-populate'
+[100%] Built target cjson-populate
+-- CPM: Adding package fastjson@ ()
+-- Populating fastjson
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/cc/Label/simdjson_measure2/build/_deps/fastjson-subbuild
+[ 11%] Creating directories for 'fastjson-populate'
+[ 22%] Performing download step (download, verify and extract) for 'fastjson-populate'
+-- Downloading...
+   dst='/home/cc/Label/simdjson_measure2/build/_deps/fastjson-subbuild/fastjson-populate-prefix/src/485f994a61a64ac73fa6a40d4d639b99b463563b.zip'
+   timeout='none'
+   inactivity timeout='none'
+-- Using src='https://github.com/mikeando/fastjson/archive/485f994a61a64ac73fa6a40d4d639b99b463563b.zip'
+-- [download 16% complete]
+-- [download 23% complete]
+-- [download 75% complete]
+-- [download 100% complete]
+-- Downloading... done
+-- extracting...
+     src='/home/cc/Label/simdjson_measure2/build/_deps/fastjson-subbuild/fastjson-populate-prefix/src/485f994a61a64ac73fa6a40d4d639b99b463563b.zip'
+     dst='/home/cc/Label/simdjson_measure2/build/_deps/fastjson-src'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[ 33%] No update step for 'fastjson-populate'
+[ 44%] No patch step for 'fastjson-populate'
+[ 55%] No configure step for 'fastjson-populate'
+[ 66%] No build step for 'fastjson-populate'
+[ 77%] No install step for 'fastjson-populate'
+[ 88%] No test step for 'fastjson-populate'
+[100%] Completed 'fastjson-populate'
+[100%] Built target fastjson-populate
+-- CPM: Adding package gason@ ()
+-- Populating gason
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/cc/Label/simdjson_measure2/build/_deps/gason-subbuild
+[ 11%] Creating directories for 'gason-populate'
+[ 22%] Performing download step (download, verify and extract) for 'gason-populate'
+-- Downloading...
+   dst='/home/cc/Label/simdjson_measure2/build/_deps/gason-subbuild/gason-populate-prefix/src/7aee524189da1c1ecd19f67981e3d903dae25470.zip'
+   timeout='none'
+   inactivity timeout='none'
+-- Using src='https://github.com/vivkin/gason/archive/7aee524189da1c1ecd19f67981e3d903dae25470.zip'
+-- [download 76% complete]
+-- [download 100% complete]
+-- Downloading... done
+-- extracting...
+     src='/home/cc/Label/simdjson_measure2/build/_deps/gason-subbuild/gason-populate-prefix/src/7aee524189da1c1ecd19f67981e3d903dae25470.zip'
+     dst='/home/cc/Label/simdjson_measure2/build/_deps/gason-src'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[ 33%] No update step for 'gason-populate'
+[ 44%] No patch step for 'gason-populate'
+[ 55%] No configure step for 'gason-populate'
+[ 66%] No build step for 'gason-populate'
+[ 77%] No install step for 'gason-populate'
+[ 88%] No test step for 'gason-populate'
+[100%] Completed 'gason-populate'
+[100%] Built target gason-populate
+-- CPM: Adding package jsmn@ ()
+-- Populating jsmn
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/cc/Label/simdjson_measure2/build/_deps/jsmn-subbuild
+[ 11%] Creating directories for 'jsmn-populate'
+[ 22%] Performing download step (download, verify and extract) for 'jsmn-populate'
+-- Downloading...
+   dst='/home/cc/Label/simdjson_measure2/build/_deps/jsmn-subbuild/jsmn-populate-prefix/src/18e9fe42cbfe21d65076f5c77ae2be379ad1270f.zip'
+   timeout='none'
+   inactivity timeout='none'
+-- Using src='https://github.com/zserge/jsmn/archive/18e9fe42cbfe21d65076f5c77ae2be379ad1270f.zip'
+-- [download 86% complete]
+-- [download 100% complete]
+-- Downloading... done
+-- extracting...
+     src='/home/cc/Label/simdjson_measure2/build/_deps/jsmn-subbuild/jsmn-populate-prefix/src/18e9fe42cbfe21d65076f5c77ae2be379ad1270f.zip'
+     dst='/home/cc/Label/simdjson_measure2/build/_deps/jsmn-src'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[ 33%] No update step for 'jsmn-populate'
+[ 44%] No patch step for 'jsmn-populate'
+[ 55%] No configure step for 'jsmn-populate'
+[ 66%] No build step for 'jsmn-populate'
+[ 77%] No install step for 'jsmn-populate'
+[ 88%] No test step for 'jsmn-populate'
+[100%] Completed 'jsmn-populate'
+[100%] Built target jsmn-populate
+-- CPM: Adding package nlohmann_json@3.12.0 (3.12.0)
+-- Using the multi-header code from /home/cc/Label/simdjson_measure2/build/_deps/nlohmann_json-src/include/
+-- CPM: Adding package rapidjson@ ()
+-- Populating rapidjson
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/cc/Label/simdjson_measure2/build/_deps/rapidjson-subbuild
+[ 11%] Creating directories for 'rapidjson-populate'
+[ 22%] Performing download step (download, verify and extract) for 'rapidjson-populate'
+-- Downloading...
+   dst='/home/cc/Label/simdjson_measure2/build/_deps/rapidjson-subbuild/rapidjson-populate-prefix/src/805d7ed5dfe97a39b8b0816fd5eeed8731dc4936.zip'
+   timeout='none'
+   inactivity timeout='none'
+-- Using src='https://github.com/Tencent/rapidjson/archive/805d7ed5dfe97a39b8b0816fd5eeed8731dc4936.zip'
+-- [download 1% complete]
+-- [download 3% complete]
+-- [download 4% complete]
+-- [download 7% complete]
+-- [download 9% complete]
+-- [download 16% complete]
+-- [download 17% complete]
+-- [download 19% complete]
+-- [download 33% complete]
+-- [download 34% complete]
+-- [download 66% complete]
+-- [download 68% complete]
+-- [download 100% complete]
+-- Downloading... done
+-- extracting...
+     src='/home/cc/Label/simdjson_measure2/build/_deps/rapidjson-subbuild/rapidjson-populate-prefix/src/805d7ed5dfe97a39b8b0816fd5eeed8731dc4936.zip'
+     dst='/home/cc/Label/simdjson_measure2/build/_deps/rapidjson-src'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[ 33%] No update step for 'rapidjson-populate'
+[ 44%] No patch step for 'rapidjson-populate'
+[ 55%] No configure step for 'rapidjson-populate'
+[ 66%] No build step for 'rapidjson-populate'
+[ 77%] No install step for 'rapidjson-populate'
+[ 88%] No test step for 'rapidjson-populate'
+[100%] Completed 'rapidjson-populate'
+[100%] Built target rapidjson-populate
+-- Disabling rapidjson
+-- CPM: Adding package sajson@ ()
+-- Populating sajson
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/cc/Label/simdjson_measure2/build/_deps/sajson-subbuild
+[ 11%] Creating directories for 'sajson-populate'
+[ 22%] Performing download step (download, verify and extract) for 'sajson-populate'
+-- Downloading...
+   dst='/home/cc/Label/simdjson_measure2/build/_deps/sajson-subbuild/sajson-populate-prefix/src/2dcfd350586375f9910f74821d4f07d67ae455ba.zip'
+   timeout='none'
+   inactivity timeout='none'
+-- Using src='https://github.com/chadaustin/sajson/archive/2dcfd350586375f9910f74821d4f07d67ae455ba.zip'
+-- [download 2% complete]
+-- [download 5% complete]
+-- [download 12% complete]
+-- [download 13% complete]
+-- [download 27% complete]
+-- [download 43% complete]
+-- [download 54% complete]
+-- [download 88% complete]
+-- [download 100% complete]
+-- Downloading... done
+-- extracting...
+     src='/home/cc/Label/simdjson_measure2/build/_deps/sajson-subbuild/sajson-populate-prefix/src/2dcfd350586375f9910f74821d4f07d67ae455ba.zip'
+     dst='/home/cc/Label/simdjson_measure2/build/_deps/sajson-src'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[ 33%] No update step for 'sajson-populate'
+[ 44%] No patch step for 'sajson-populate'
+[ 55%] No configure step for 'sajson-populate'
+[ 66%] No build step for 'sajson-populate'
+[ 77%] No install step for 'sajson-populate'
+[ 88%] No test step for 'sajson-populate'
+[100%] Completed 'sajson-populate'
+[100%] Built target sajson-populate
+-- CPM: Adding package ujson4c@ ()
+-- Populating ujson4c
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/cc/Label/simdjson_measure2/build/_deps/ujson4c-subbuild
+[ 11%] Creating directories for 'ujson4c-populate'
+[ 22%] Performing download step (download, verify and extract) for 'ujson4c-populate'
+-- Downloading...
+   dst='/home/cc/Label/simdjson_measure2/build/_deps/ujson4c-subbuild/ujson4c-populate-prefix/src/e14f3fd5207fe30d1bdea723f260609e69d1abfa.zip'
+   timeout='none'
+   inactivity timeout='none'
+-- Using src='https://github.com/esnme/ujson4c/archive/e14f3fd5207fe30d1bdea723f260609e69d1abfa.zip'
+-- [download 7% complete]
+-- [download 22% complete]
+-- [download 52% complete]
+-- [download 54% complete]
+-- [download 100% complete]
+-- Downloading... done
+-- extracting...
+     src='/home/cc/Label/simdjson_measure2/build/_deps/ujson4c-subbuild/ujson4c-populate-prefix/src/e14f3fd5207fe30d1bdea723f260609e69d1abfa.zip'
+     dst='/home/cc/Label/simdjson_measure2/build/_deps/ujson4c-src'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[ 33%] No update step for 'ujson4c-populate'
+[ 44%] No patch step for 'ujson4c-populate'
+[ 55%] No configure step for 'ujson4c-populate'
+[ 66%] No build step for 'ujson4c-populate'
+[ 77%] No install step for 'ujson4c-populate'
+[ 88%] No test step for 'ujson4c-populate'
+[100%] Completed 'ujson4c-populate'
+[100%] Built target ujson4c-populate
+-- CPM: Adding package yyjson@ ()
+-- Populating yyjson
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/cc/Label/simdjson_measure2/build/_deps/yyjson-subbuild
+[ 11%] Creating directories for 'yyjson-populate'
+[ 22%] Performing download step (download, verify and extract) for 'yyjson-populate'
+-- Downloading...
+   dst='/home/cc/Label/simdjson_measure2/build/_deps/yyjson-subbuild/yyjson-populate-prefix/src/c3856514de0a67d7b66939bf3ed491a2d6e61277.zip'
+   timeout='none'
+   inactivity timeout='none'
+-- Using src='https://github.com/ibireme/yyjson/archive/c3856514de0a67d7b66939bf3ed491a2d6e61277.zip'
+-- [download 1% complete]
+-- [download 2% complete]
+-- [download 6% complete]
+-- [download 12% complete]
+-- [download 20% complete]
+-- [download 24% complete]
+-- [download 25% complete]
+-- [download 43% complete]
+-- [download 49% complete]
+-- [download 50% complete]
+-- [download 82% complete]
+-- [download 100% complete]
+-- Downloading... done
+-- extracting...
+     src='/home/cc/Label/simdjson_measure2/build/_deps/yyjson-subbuild/yyjson-populate-prefix/src/c3856514de0a67d7b66939bf3ed491a2d6e61277.zip'
+     dst='/home/cc/Label/simdjson_measure2/build/_deps/yyjson-src'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[ 33%] No update step for 'yyjson-populate'
+[ 44%] No patch step for 'yyjson-populate'
+[ 55%] No configure step for 'yyjson-populate'
+[ 66%] No build step for 'yyjson-populate'
+[ 77%] No install step for 'yyjson-populate'
+[ 88%] No test step for 'yyjson-populate'
+[100%] Completed 'yyjson-populate'
+[100%] Built target yyjson-populate
+-- CPM: Adding package cxxopts@ ()
+-- We have cxxopts as a dependency and we are building the tools (e.g., json2json).
+-- Found Python3: /home/cc/miniforge3/bin/python3.13 (found version "3.13.12") found components: Interpreter 
+-- Including amalgamate_demo test. 
+-- Including simdjson-singleheader test.
+-- Including amalgamate_demo_direct_from_repository test.
+-- compiler id: GNU version: 14.3.0
+-- Either git is unavailable or else it is too old. We are disabling checkperf targets.
+-- Performing Test SIMDJSON_COMPILER_SUPPORTS_CXX20
+-- Performing Test SIMDJSON_COMPILER_SUPPORTS_CXX20 - Success
+-- Performing Test SIMDJSON_SUPPORTS_MARCH_NATIVE
+-- Performing Test SIMDJSON_SUPPORTS_MARCH_NATIVE - Success
+-- Configuring done (18.9s)
+-- Generating done (0.3s)
+-- Build files have been written to: /home/cc/Label/simdjson_measure2/build

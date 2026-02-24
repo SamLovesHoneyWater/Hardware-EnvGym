@@ -1,0 +1,34 @@
+{
+  "name": "simdjson_simdjson",
+  "url": "https://github.com/simdjson/simdjson",
+  "mvw": {
+    "mvw_command": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DSIMDJSON_DEVELOPER_MODE=ON && cmake --build build -j48 && ctest --test-dir build -j48 --output-on-failure",
+    "build_command": "cmake --build build -j48",
+    "run_command": "ctest --test-dir build -j48 --output-on-failure",
+    "input_scale": "official developer workflow with SIMDJSON_DEVELOPER_MODE=ON; full ctest suite (119 tests) in parallel",
+    "success_criteria": "build exit code 0 and ctest report '100% tests passed, 0 tests failed out of 119'"
+  },
+  "environment": {
+    "os": "Linux",
+    "methodology": "tutorial.md one-pass profiling; process-tree RSS peak via monitor_tree.sh (captures multi-thread/multi-process aggregate peak); workload actually executed"
+  },
+  "static_triage": {
+    "requires_gpu": false,
+    "likely_bottlenecks": ["RAM", "CPU", "Disk"],
+    "notes": "C++ SIMD JSON parser; developer mode compiles many test/example targets and executes full test suite."
+  },
+  "peaks_observed": {
+    "build_peak_ram_gb": 11.7679,
+    "run_peak_ram_gb": 7.4040,
+    "peak_disk_gb": 0.2939,
+    "build_runtime_seconds": 69,
+    "run_runtime_seconds": 15,
+    "cpu_utilization_summary": "build very high (parallel compilation), run high (parallel ctest)"
+  },
+  "margins_used": "none",
+  "min_hardware": {
+    "build_min_spec": {"min_ram_gb": 16, "min_disk_gb": 1, "min_vcpu": 2},
+    "run_min_spec": {"min_ram_gb": 8, "min_disk_gb": 1, "min_vcpu": 2},
+    "summary": "2 vCPU / 16 GB RAM / 1 GB disk, no GPU. Raw process-tree peaks: build 11.7679 GB, run 7.4040 GB, disk 0.2939 GB."
+  }
+}

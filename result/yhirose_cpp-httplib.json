@@ -1,0 +1,46 @@
+{
+  "name": "yhirose_cpp-httplib",
+  "url": "https://github.com/yhirose/cpp-httplib",
+  "mvw": {
+    "mvw_command": "cmake -S . -B build_minhw -DCMAKE_BUILD_TYPE=Release -DHTTPLIB_TEST=ON -DHTTPLIB_USE_OPENSSL_IF_AVAILABLE=OFF -DHTTPLIB_USE_ZLIB_IF_AVAILABLE=OFF -DHTTPLIB_USE_BROTLI_IF_AVAILABLE=OFF -DHTTPLIB_USE_ZSTD_IF_AVAILABLE=OFF -DHTTPLIB_USE_NON_BLOCKING_GETADDRINFO=OFF && cmake --build build_minhw -j1 && ctest --test-dir build_minhw -j1 --output-on-failure",
+    "build_command": "cmake --build build_minhw -j1",
+    "run_command": "ctest --test-dir build_minhw -j1 --output-on-failure",
+    "input_scale": "cpp-httplib test target in Release mode, single-job build and single-job test",
+    "success_criteria": "exit code 0 and ctest output contains '100% tests passed'"
+  },
+  "environment": {
+    "os": "Linux",
+    "methodology": "tutorial.md one-pass profiling; process-group peak sampling every 0.5s for RAM/CPU/threads; whole process tree covered (including child processes and multi-thread activity)."
+  },
+  "static_triage": {
+    "requires_gpu": false,
+    "likely_bottlenecks": ["CPU", "RAM", "Disk"],
+    "notes": "C++ test build pulls GoogleTest via FetchContent and compiles large test translation unit."
+  },
+  "peaks_observed": {
+    "build_peak_ram_gb": 1.6788,
+    "run_peak_ram_gb": 0.5394,
+    "peak_disk_gb": 0.0386,
+    "build_peak_cpu_percent_sum": 176.3,
+    "run_peak_cpu_percent_sum": 261.9,
+    "build_peak_threads_sum": 17,
+    "run_peak_threads_sum": 62,
+    "build_runtime_seconds": 150,
+    "run_runtime_seconds": 126,
+    "cpu_utilization_summary": "Build phase CPU-bound with compiler/linker peaks; run phase low to moderate CPU during tests."
+  },
+  "margins_used": "none",
+  "min_hardware": {
+    "build_min_spec": {
+      "min_ram_gb": 2,
+      "min_disk_gb": 1,
+      "min_vcpu": 2
+    },
+    "run_min_spec": {
+      "min_ram_gb": 2,
+      "min_disk_gb": 1,
+      "min_vcpu": 2
+    },
+    "summary": "2 vCPU / 2 GB RAM / 1 GB disk, no GPU. Raw peaks: build RAM 1.6788 GB, run RAM 0.5394 GB, disk 0.0386 GB."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "sharkdp_bat",
+  "url": "https://github.com/sharkdp/bat",
+  "mvw": {
+    "mvw_command": "cargo build --release && for i in $(seq 1 200); do ./target/release/bat --paging=never --color=never mvw_input.txt >/dev/null; done",
+    "build_command": "cargo build --release",
+    "run_command": "for i in $(seq 1 200); do ./target/release/bat --paging=never --color=never mvw_input.txt >/dev/null; done",
+    "input_scale": "single local text file (3 lines), repeated 200 invocations",
+    "success_criteria": "both commands exit code 0 and target/release/bat exists"
+  },
+  "environment": {
+    "os": "Linux",
+    "rust_toolchain": "rustc 1.93.1 (01f6ddf75 2026-02-11)",
+    "methodology": "tutorial.md one-pass profiling; process-tree RSS peak (monitor_tree.sh), whole tree not single process; MVW actually run; multi-thread/multi-process peak included."
+  },
+  "static_triage": {
+    "requires_gpu": false,
+    "likely_bottlenecks": ["RAM", "CPU", "Disk"],
+    "notes": "Rust CLI tool; no GPU requirement; build is CPU/RAM heavy due to Rust dependency compilation."
+  },
+  "peaks_observed": {
+    "build_peak_ram_gb": 3.8125,
+    "run_peak_ram_gb": 0.0072,
+    "peak_disk_gb": 0.4182,
+    "build_runtime_seconds": 64,
+    "run_runtime_seconds": 0,
+    "cpu_utilization_summary": "build high (cargo parallel compile), run low-moderate (single CLI invocation)"
+  },
+  "margins_used": "none",
+  "min_hardware": {
+    "build_min_spec": {
+      "min_ram_gb": 4,
+      "min_disk_gb": 1,
+      "min_vcpu": 2
+    },
+    "run_min_spec": {
+      "min_ram_gb": 2,
+      "min_disk_gb": 1,
+      "min_vcpu": 1
+    },
+    "summary": "2 vCPU / 4 GB RAM / 1 GB disk, no GPU. Raw process-tree peaks: build 3.8125 GB, run 0.0072 GB, disk 0.4182 GB."
+  }
+}

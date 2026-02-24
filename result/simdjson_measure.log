@@ -1,0 +1,42 @@
+=== [1/5] clone simdjson ===
+Cloning into '/home/cc/Label/simdjson_measure'...
+CMAKE=/home/cc/Label/cmake_portable/cmake-3.28.3-linux-x86_64/bin/cmake
+CTEST=/home/cc/Label/cmake_portable/cmake-3.28.3-linux-x86_64/bin/ctest
+=== [2/5] configure ===
+-- The CXX compiler identification is GNU 14.3.0
+-- The C compiler identification is GNU 14.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/cc/miniforge3/bin/x86_64-conda-linux-gnu-c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/cc/miniforge3/bin/x86_64-conda-linux-gnu-cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Looking for fork
+-- Looking for fork - found
+-- Looking for wait
+-- Looking for wait - found
+-- Adding -Og to compile flag
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE  
+-- Building only the library. Advanced users and contributors may want to turn SIMDJSON_DEVELOPER_MODE to ON, e.g., via -D SIMDJSON_DEVELOPER_MODE=ON.
+-- Configuring done (0.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/cc/Label/simdjson_measure/build
+=== [3/5] build with process-tree peak monitor (-j48) ===
+[ 33%] Building CXX object CMakeFiles/simdjson.dir/cmake_pch.hxx.gch
+[ 66%] Building CXX object CMakeFiles/simdjson.dir/src/simdjson.cpp.o
+[100%] Linking CXX static library libsimdjson.a
+[100%] Built target simdjson
+=== [4/5] run tests with process-tree peak monitor (ctest -j48) ===
+=== [4.1/5] build mvw runner ===
+=== [4.2/5] run mvw with process-tree peak monitor ===
+OK sum=215998200000
+=== [5/5] cleanup resources ===
+result -> /home/cc/Label/result/simdjson_simdjson.json
