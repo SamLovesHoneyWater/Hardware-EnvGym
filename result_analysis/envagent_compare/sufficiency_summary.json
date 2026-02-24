@@ -1,0 +1,23 @@
+{
+  "repo_count": 27,
+  "latest_log_count_found": 27,
+  "actual_reserved_sufficient_count": 0,
+  "actual_reserved_sufficient_ratio": 0.0,
+  "ai_predicted_sufficient_count": 8,
+  "ai_predicted_sufficient_ratio": 0.2962962962962963,
+  "note": "Reserved resources are treated as 0 when latest run failed (exit != 0).",
+  "average_redundancy_percent": {
+    "reserved": {
+      "cpu": -100.0,
+      "ram": -100.0,
+      "disk": -100.0,
+      "gpu": null
+    },
+    "predicted": {
+      "cpu": 135.1851851851852,
+      "ram": 456.01851851851853,
+      "disk": 116.20370370370371,
+      "gpu": null
+    }
+  }
+}

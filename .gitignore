@@ -1,11 +1,8 @@
-# 忽略根目录下除以下以外的所有项
-/*
-!.gitignore
-!README.md
-!hardware.json
-!tutorial.md
-!result
-!key_result
-!key_result/**
-!keyresultkvm
-!keyresultkvm/**
+# Ignore dependency/tooling artifacts.
+tools/
+cmake_portable/
+**/node_modules/
+*_measure/
+mui-material-ui-measure/
+nlohmann_json/
+tmux-*.log

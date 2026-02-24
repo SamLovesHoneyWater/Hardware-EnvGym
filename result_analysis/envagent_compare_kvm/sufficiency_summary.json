@@ -1,0 +1,23 @@
+{
+  "repo_count": 27,
+  "latest_log_count_found": 27,
+  "actual_reserved_sufficient_count": 23,
+  "actual_reserved_sufficient_ratio": 0.8518518518518519,
+  "ai_predicted_sufficient_count": 6,
+  "ai_predicted_sufficient_ratio": 0.2222222222222222,
+  "average_redundancy_percent": {
+    "reserved": {
+      "cpu": 2714.814814814815,
+      "ram": 8403.703703703704,
+      "disk": 24677.777777777777,
+      "gpu": null
+    },
+    "predicted": {
+      "cpu": 118.51851851851852,
+      "ram": 437.962962962963,
+      "disk": 101.38888888888889,
+      "gpu": null
+    }
+  },
+  "reserved_capacity_assumption": "Successful reservations are converted from actual node type (or KVM flavor CPU/RAM with disk guess) into numeric capacities."
+}
